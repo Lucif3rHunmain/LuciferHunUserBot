@@ -114,7 +114,7 @@
       "required": false
     },
     "DEEP_AI": {
-      "description": "Detection of Nuditiy of Picture or Non animated stickers.",
+      "description": "Detection of Nuditiy of Picture or Non animated stickers.Get Your API Key From https://deepai.org/",
       "value": "",
       "required": false
     },
