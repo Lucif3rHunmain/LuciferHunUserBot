@@ -1,6 +1,6 @@
 {
-  "name": "𝔻𝔸ℝ𝕂 ℂ𝕆𝔹ℝ𝔸",
-  "description": "The best and most awaited userbot made by hellboi_atul and modified by Jarvis userbot's owner(@Sppidy) Made with ❤ For Support Join @Dark_cobra_support ",
+  "name": "Lucif3rHun's UserBot",
+  "description": "Copied from DarkCobra. Edited by Lucif3rHun",
   "logo": "https://telegra.ph/file/00f47c54ceda3944dc47c.jpg ",
     "keywords": [
     "telegram",
@@ -9,9 +9,9 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/DARK-COBRA/DARKCOBRA/",
-  "website": "https://github.com/DARK-COBRA/DARKCOBRA/",
-  "success_url": "https://t.me/Dark_cobra_support",
+  "repository": "https://github.com/Lucif3rHunmain/LuicferHunUserBot",
+  "website": "https://github.com/Lucif3rHunmain/LuicferHunUserBot",
+  "success_url": "https://t.me/Lucif3rHun",
   "env": {
     "ENV": {
       "description": "Setting this to ANYTHING will enable heroku.",
@@ -29,7 +29,7 @@
     },
 
     "ALIVE_NAME": {
-      "description": "Fill your Full name or Username like @hellboi_atul.",
+      "description": "Fill your Full name or Username like @Lucif3rHun",
       "value": "",
       "required": true
     },
@@ -45,7 +45,7 @@
     },
     "ALIVE_PHOTTO": {
       "description": "Let it be what it is(skip)..or you can change the link according to your convince..this link is useful for `.awake` command.",
-      "value": "https://telegra.ph/file/0d0fafe17acca1c51b42d.jpg",
+      "value": "https://telegra.ph/file/771b6db93ddc361f75a6e.jpg",
       "required": true
     },
     "DEFAULT_BIO": {
@@ -55,7 +55,7 @@
     },
     "PMPERMIT_PIC": {
       "description": "put here any telegraph media link for pmpermit custom pic.",
-      "value": "https://telegra.ph/file/ad8430d78a8e1adb3d8ea.jpg",
+      "value": "https://telegra.ph/file/771b6db93ddc361f75a6e.jpg",
       "required": true
     },
     "PM_PERMIT_GROUP_ID": {
@@ -110,6 +110,11 @@
    },
     "OCR_SPACE_API_KEY": {
       "description": "Needed for ocr.py, get it from ocr.space .",
+      "value": "",
+      "required": false
+    },
+    "DEEP_AI": {
+      "description": "Detection of Nuditiy of Picture or Non animated stickers.",
       "value": "",
       "required": false
     },
@@ -178,7 +183,7 @@
     },
     "NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD": {
       "description": " Set The Amount Of Buttons Displayed In Help Command",
-      "value": "7",
+      "value": "10",
       "required": true
     },
     "NO_OF_COLUMS_DISPLAYED_IN_H_ME_CMD": {
