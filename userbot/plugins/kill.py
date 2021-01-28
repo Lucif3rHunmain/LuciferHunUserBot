@@ -34,6 +34,8 @@ async def _(event):
         idd = reply_message.sender_id
         if idd==1363193604:
             await event.edit("This is My Master\n**How dare you trying to tell me to kill master u nub nibba!**\n\n__Your account is on hold! Pay 99$ to my master__ [Lucif3rHun](tg://user?id=1363193604) __to release your account__😏")
+            await asyncio.sleep(5)
+            await event.delete()
         else:
             await event.edit("Ruk killing............")
             animation_chars = [
