@@ -56,8 +56,9 @@ async def _(event):
               return
           if response.text.startswith("Hi!"):
              await event.edit("```Can you kindly disable your forward privacy settings for good?```")
-          else: 
-             await event.delete()   
+          else:
+             await asyncio.sleep(10)
+             await event.delete()
              await event.client.send_file(event.chat_id, response.message)
 CMD_HELP.update(
     {
