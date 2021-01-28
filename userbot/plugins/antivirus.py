@@ -1,5 +1,6 @@
 #Copyright by Lucif3rHun, leech with credits leechers
 import datetime
+import asyncio
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
@@ -29,7 +30,8 @@ async def _(event):
               return
           if response.text.startswith("Hi!"):
              await event.edit("```Can you kindly disable your forward privacy settings for good?```")
-          else: 
+          else:
+             await asyncio.sleep(10)
              await event.delete()   
              await event.client.send_file(event.chat_id, response.message)
 
