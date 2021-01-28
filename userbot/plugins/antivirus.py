@@ -31,7 +31,7 @@ async def _(event):
              await event.edit("```Can you kindly disable your forward privacy settings for good?```")
           else: 
              await event.delete()   
-             await event.client.send_file(event.chat_id, response.message , reply_to=reply_message)
+             await event.client.send_file(event.chat_id, response.message)
 
 @borg.on(admin_cmd(pattern=r"dtscan"))
 async def _(event):
@@ -58,7 +58,7 @@ async def _(event):
              await event.edit("```Can you kindly disable your forward privacy settings for good?```")
           else: 
              await event.delete()   
-             await event.client.send_file(event.chat_id, response.message , reply_to=reply_message)
+             await event.client.send_file(event.chat_id, response.message)
 CMD_HELP.update(
     {
         "Antivirus Scan": ".vtscan"
