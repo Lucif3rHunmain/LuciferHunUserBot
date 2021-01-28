@@ -1,6 +1,6 @@
 # Copyright (C) 2020 BY - GitHub.com/code-rgb [TG - @deleteduser420]
 # ported to dc by @Lucif3rHun
-
+import asyncio
 import os
 import requests
 from userbot import CMD_HELP
@@ -52,6 +52,8 @@ async def detect(event):
         result,
         link_preview=False,
         parse_mode="HTML",
+    await asyncio.sleep(5)
+    await result.delete()
     )
 CMD_HELP.update(
     {
