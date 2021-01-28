@@ -4,6 +4,7 @@ import os
 from asyncio import wait
 from userbot import CMD_HELP
 from userbot.utils import admin_cmd
+from userbot.uniborgConfig import Config
 
 
 from userbot.events import register
