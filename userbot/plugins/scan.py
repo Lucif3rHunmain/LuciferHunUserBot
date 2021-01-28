@@ -36,7 +36,8 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "ScanGroup": ".scan "
-    "\nUSAGE:Reply to a user by .scan. It retrieves the Number and Names of the Groups the User Joined \n\n"
+        "ScanGroup": "__**PLUGIN NAME :** ScanGroup__\
+    \n\nðŸ“Œ** CMD â˜…** `.scan`\
+    \n**USAGE   â˜…  **Retrieves the Number and Names of the Groups the User Joined"
     }
 )
