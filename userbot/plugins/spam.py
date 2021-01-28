@@ -19,8 +19,8 @@ async def spammer(e):
     reply_to_id = e.message
     if e.reply_to_msg_id:
         reply_to_id = await e.get_reply_message()
-    if not os.path.isdir(Config.TEMP_DOWNLOAD_DIRECTORY):
-        os.makedirs(Config.TEMP_DOWNLOAD_DIRECTORY)
+    if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
+        os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     try:
         hmm = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
         hmm = Get(hmm)
@@ -54,26 +54,26 @@ async def spammer(e):
                     + f"`{spam_message}`",
                 )
     elif reply_to_id.media:
-        to_download_directory = Config.TEMP_DOWNLOAD_DIRECTORY
+        to_download_directory = Config.TMP_DOWNLOAD_DIRECTORY
         downloaded_file_name = os.path.join(to_download_directory, "spam")
         downloaded_file_name = await e.client.download_media(
             reply_to_id.media, downloaded_file_name
         )
         await e.delete()
         if os.path.exists(downloaded_file_name):
-            sandy = None
+            lucif3r = None
             for _ in range(counter):
-                if sandy:
-                    sandy = await e.client.send_file(e.chat_id, sandy)
+                if lucif3r:
+                    lucif3r = await e.client.send_file(e.chat_id, lucif3r)
                 else:
-                    sandy = await e.client.send_file(e.chat_id, downloaded_file_name)
+                    lucif3r = await e.client.send_file(e.chat_id, downloaded_file_name)
                 try:
                     await e.client(
                         functions.messages.SaveGifRequest(
                             id=types.InputDocument(
-                                id=sandy.media.document.id,
-                                access_hash=sandy.media.document.access_hash,
-                                file_reference=sandy.media.document.file_reference,
+                                id=lucif3r.media.document.id,
+                                access_hash=lucif3r.media.document.access_hash,
+                                file_reference=lucif3r.media.document.file_reference,
                             ),
                             unsave=True,
                         )
@@ -88,16 +88,16 @@ async def spammer(e):
                         "#SPAM\n"
                         + f"Spam was executed successfully in [User](tg://user?id={e.chat_id}) chat with {counter} times with below message",
                     )
-                    sandy = await e.client.send_file(
+                    lucif3r = await e.client.send_file(
                         LOGGER_GROUP, downloaded_file_name
                     )
                     try:
                         await e.client(
                             functions.messages.SaveGifRequest(
                                 id=types.InputDocument(
-                                    id=sandy.media.document.id,
-                                    access_hash=sandy.media.document.access_hash,
-                                    file_reference=sandy.media.document.file_reference,
+                                    id=lucif3r.media.document.id,
+                                    access_hash=lucif3r.media.document.access_hash,
+                                    file_reference=lucif3r.media.document.file_reference,
                                 ),
                                 unsave=True,
                             )
@@ -111,16 +111,16 @@ async def spammer(e):
                         "#SPAM\n"
                         + f"Spam was executed successfully in {e.chat.title}(`{e.chat_id}`) with {counter} times with below message",
                     )
-                    sandy = await e.client.send_file(
+                    lucif3r = await e.client.send_file(
                         LOGGER_GROUP, downloaded_file_name
                     )
                     try:
                         await e.client(
                             functions.messages.SaveGifRequest(
                                 id=types.InputDocument(
-                                    id=sandy.media.document.id,
-                                    access_hash=sandy.media.document.access_hash,
-                                    file_reference=sandy.media.document.file_reference,
+                                    id=lucif3r.media.document.id,
+                                    access_hash=lucif3r.media.document.access_hash,
+                                    file_reference=lucif3r.media.document.file_reference,
                                 ),
                                 unsave=True,
                             )
