@@ -1,6 +1,7 @@
 #Copyright by Lucif3rHun, leech with credits leechers
 import datetime
 import asyncio
+from telethon.tl.custom import Button
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
@@ -32,7 +33,8 @@ async def _(event):
              await event.edit("```Can you kindly disable your forward privacy settings for good?```")
           else:
              await asyncio.sleep(10)
-             await event.delete()   
+             await event.delete()
+             click(text='🧪 Detections')
              await event.client.send_file(event.chat_id, response.message)
 
 @borg.on(admin_cmd(pattern=r"dtscan"))
@@ -59,8 +61,8 @@ async def _(event):
           if response.text.startswith("Hi!"):
              await event.edit("```Can you kindly disable your forward privacy settings for good?```")
           else:
-             await asyncio.sleep(10)
              await event.delete()
+             await asyncio.sleep(10)
              await event.client.send_file(event.chat_id, response.message)
 CMD_HELP.update(
     {
