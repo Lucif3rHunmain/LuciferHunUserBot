@@ -1,3 +1,4 @@
+#Copyright by Lucif3rHun, leech with credits leechers
 import datetime
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
