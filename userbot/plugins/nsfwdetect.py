@@ -21,10 +21,6 @@ async def detect(event):
         )
     catevent = await edit_or_reply(event, "`Downloading the file to check...`")
     media = await event.client.download_media(reply)
-    if not media.endswith(("png", "jpg", "webp")):
-        return await edit_delete(
-            event, "`Reply to any image or non animated sticker !`", 5
-        )
     catevent = await edit_or_reply(event, "`Detecting NSFW limit...`")
     r = requests.post(
         "https://api.deepai.org/api/nsfw-detector",
