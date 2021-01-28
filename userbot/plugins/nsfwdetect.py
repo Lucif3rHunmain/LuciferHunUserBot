@@ -52,8 +52,6 @@ async def detect(event):
         result,
         link_preview=False,
         parse_mode="HTML",
-    await asyncio.sleep(5)
-    await result.edit_delete()
     )
 CMD_HELP.update(
     {
