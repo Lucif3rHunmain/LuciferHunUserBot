@@ -17,7 +17,7 @@
 # by @its_xditya
 
 from rextester_py import rexec
-
+from userbot.utils import admin_cmd
 from userbot import CMD_HELP
 
 
