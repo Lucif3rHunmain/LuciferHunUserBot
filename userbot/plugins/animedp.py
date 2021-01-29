@@ -91,9 +91,9 @@ async def main(event):
         await asyncio.sleep(input1_Delay)
 CMD_HELP.update(
   {
-    "gamersdp": "`.gamerphp`\n"
-    "Usage - Auto-changing dp of Gamers Every 5 Mins(Default)."
-    "`.gamerphp <delay> <s or S for seconds, m or M for minute(s) Delay, h or H for hour(s) Delay and d or D for Day(s) Delay>`\n"
-    "Usage - Auto-changing dp of Gamers with custom Delay."
+    "Anime DP": "`.animedp`\n"
+    "Usage - Auto-changing dp of Anime Every 5 Mins(Default)."
+    "`.animedp <delay> <s or S for seconds, m or M for minute(s) Delay, h or H for hour(s) Delay and d or D for Day(s) Delay>`\n"
+    "Usage - Auto-changing dp of Anime with custom Delay."
   }
 )
