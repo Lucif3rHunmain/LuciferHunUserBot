@@ -74,9 +74,9 @@ async def main(event):
 
 CMD_HELP.update(
   {
-    "gamersdp": "`.hackerdp`\n"
-    "Usage - Auto-changing dp of Gamers Every 5 Mins(Default)."
-    "`.hackerdp <delay> <s or S for seconds, m or M for minute(s) Delay, h or H for hour(s) Delay and d or D for Day(s) Delay>`\n"
-    "Usage - Auto-changing dp of Gamers with custom Delay."
+    "Hackers DP": "`.hackerdp`"
+    "\nUsage - Auto-changing dp of Hacker Every 5 Mins(Default). \n\n"
+    "`.hackerdp` <delay> <s or S for seconds, m or M for minute(s) Delay, h or H for hour(s) Delay and d or D for Day(s) Delay>"
+    "\nUsage - Auto-changing dp of Hacker with custom Delay. \n\n"
   }
 )
