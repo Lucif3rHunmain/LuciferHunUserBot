@@ -5,6 +5,7 @@ import urllib , os
 from telethon.tl import functions
 
 from datetime import datetime
+from userbot import CMD_HELP
 
 from PIL import Image, ImageDraw, ImageFont
 
