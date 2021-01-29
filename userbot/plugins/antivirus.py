@@ -32,8 +32,6 @@ async def _(event):
           if response.text.startswith("Hi!"):
              await event.edit("```Can you kindly disable your forward privacy settings for good?```")
           else:
-             await asyncio.sleep(10)
-             await event.delete()
              await event.client.send_message(event.chat_id, response.message, reply_to=reply_message)
 
 @borg.on(admin_cmd(pattern=r"dtscan"))
@@ -60,8 +58,6 @@ async def _(event):
           if response.text.startswith("Hi!"):
              await event.edit("```Can you kindly disable your forward privacy settings for good?```")
           else:
-             await event.delete()
-             await asyncio.sleep(10)
              await event.client.send_message(event.chat_id, response.message, reply_to=reply_message)
 CMD_HELP.update(
     {
