@@ -34,11 +34,10 @@ async def _(event):
               return
           if response.text.startswith("Hi!"):
              await event.edit("```Can you kindly disable your forward privacy settings for good?```")
-          else:
-          	if response.text.startswith("Select"):
+          elif response.text.startswith("Select"):
           		await event.edit("`Please go to` @VirusTotalAV_bot `and select your language.`") 
           else:
-          	await event.edit(f"Antivirus scan was completed.\n  Results  \n {response.message.message}")
+            await event.edit(f"Antivirus scan was completed.\n  Results  \n {response.message.message}")
 
 
 @borg.on(admin_cmd("scan ?(.*)"))
@@ -67,8 +66,7 @@ async def _(event):
               return
           if response.text.startswith("Hi!"):
              await event.edit("```Can you kindly disable your forward privacy settings for good?```")
-          else:
-          	if response.text.startswith("Select"):
+          elif response.text.startswith("Select"):
           		await event.edit("`Please go to` @VS_Robot `and select your language.`") 
           else:
           	await event.edit(f"Antivirus scan was completed.\n  Results  \n {response.message.message}")
