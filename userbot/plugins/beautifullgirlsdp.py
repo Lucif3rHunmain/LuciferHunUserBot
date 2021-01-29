@@ -89,4 +89,4 @@ async def main(event):
 
         await asyncio.sleep(300)
         
-  CMD_HELP.update({"beautifullgirlsdp": ".girlsdp\nUse - Auto-changing dp of Beautiful Girls."})
+CMD_HELP.update({"beautifullgirlsdp": ".girlsdp\nUse - Auto-changing dp of Beautiful Girls."})
