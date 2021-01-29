@@ -36,11 +36,14 @@ async def _(event):
              await event.edit("```Can you kindly disable your forward privacy settings for good?```")
           elif response.text.startswith("Select"):
           		await event.edit("`Please go to` @VirusTotalAV_bot `and select your language.`")
-          elif response.text.startswith(" 🚀 File initialized."):
+          elif response.text.startswith("🚀 File initialized."):
              await event.edit("`Checking the file`")
              await asyncio.sleep(10)
+             response = conv.wait_event(events.NewMessage(incoming=True,from_users=1356559037))
+             await bot.forward_messages(chat, reply_message)
+             response = await response
              await event.edit(f"Antivirus scan was completed.\n  Results  \n {response.message.message}")
-          else:
+          elif response.text.startswith("Detections"):
             await event.edit(f"Antivirus scan was completed.\n  Results  \n {response.message.message}")
 
 
@@ -74,6 +77,9 @@ async def _(event):
           	 await event.edit("`Please go to` @VS_Robot `and select your language.`")
           elif response.text.startswith("Scanning the file..."):
              await event.edit("`Checking the file Please Upto 1 Minute`")
+             response = conv.wait_event(events.NewMessage(incoming=True,from_users=299969270))
+             await bot.forward_messages(chat, reply_message)
+             response = await response
              await asyncio.sleep(10)
              await event.edit(f"Antivirus scan was completed.\n  Results  \n {response.message.message}")
           else:
