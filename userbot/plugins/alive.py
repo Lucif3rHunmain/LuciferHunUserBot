@@ -15,7 +15,7 @@ from userbot import ALIVE_NAME, Lastupdate
 from . import dcdef
 from telethon.tl.types import ChannelParticipantsAdmins
 # 🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "DARK COBRA"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Lucif3rHun"
 
 # Thanks to Sipak bro and Aryan.. 
 # Made by @hellboi_atul and Edited by Lucif3rHun
@@ -34,12 +34,12 @@ async def alive(yes):
     await yes.delete()
     uptime = await dcdef.get_readable_time((time.time() - Lastupdate))
     pm_caption = "** ʟᴜᴄɪғ𝟹ʀʜᴜɴ's ᴜsᴇʀʙᴏᴛ 𝙸𝚂 𝙾𝙽𝙻𝙸𝙽𝙴**\n\n"
-    pm_caption += "**Yes Master, Am Alive And Systems Are Working Perfectly As It Should Be...**\n\n"
+    pm_caption += "**Yes Master, I Am Alive And All My Systems Are Working Perfectly As It Should Be...**\n\n"
     pm_caption += "✘ About My System ✘\n\n"
     pm_caption += f"➾ **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀꜱɪᴏɴ** ☞ {version.__version__}\n"
     pm_caption += "➾ **ʟɪᴄᴇɴꜱᴇ**  ☞ [ʟᴜᴄɪғ𝟹ʀʜᴜɴ](https://github.com/Lucif3rHunmain)\n"
     pm_caption += "➾ **ᴄᴏᴘʏʀɪɢʜᴛ ʙʏ** ☞ [𝙳𝙰𝚁𝙺-𝙲𝙾𝙱𝚁𝙰](https://github.com/DARK-COBRA/DARKCOBRA)\n"
-    pm_caption += "➾ **ᴇᴅɪᴛᴇᴅ ʙʏ** ☞ [ʟᴜᴄɪғ𝟹ʀʜᴜɴ](@Lucif3rHun)\n\n"
+    pm_caption += "➾ **ᴇᴅɪᴛᴇᴅ ʙʏ** ☞ [ʟᴜᴄɪғ𝟹ʀʜᴜɴ](tg://user?id={Lucif3rHun})\n\n"
     pm_caption += f"➾ **ᴜᴘᴛɪᴍᴇ** ☞ {uptime}\n\n"
     pm_caption += f"➾ **ᴍʏ ᴍᴀsᴛᴇʀ** ☞ [{DEFAULTUSER}](tg://user?id={Lucif3r})\n"
     on = await borg.send_file(yes.chat_id, file=file1, caption=pm_caption)
