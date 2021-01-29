@@ -72,7 +72,7 @@ async def _(event):
              await event.edit("```Can you kindly disable your forward privacy settings for good?```")
           elif response.text.startswith("Select"):
           	 await event.edit("`Please go to` @VS_Robot `and select your language.`")
-          elif response.text.startswith(" Scanning the file...):
+          elif response.text.startswith("Scanning the file..."):
              await event.edit("`Checking the file Please Upto 1 Minute`")
              await asyncio.sleep(10)
              await event.edit(f"Antivirus scan was completed.\n  Results  \n {response.message.message}")
