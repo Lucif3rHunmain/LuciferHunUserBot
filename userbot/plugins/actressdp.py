@@ -56,14 +56,14 @@ async def actresspp():
 @borg.on(admin_cmd(pattern="actressdp ?(.*)"))
 async def main(event):
     input_str = "".join(event.text.split(maxsplit=1)[1:])
-    Delay = int(input_str.split(" ", 2)[0])
-    Time = str(input_str.split(" ", 2)[1])
-    If Time == 'h' or Time == 'H':
-     Delay=(Delay*60*60)
-      Elif Time == 'm' or Time == 'M':
-       Delay=(Delay*60)
+    input_Delay = int(input_str.split(" ", 2)[0])
+    input_Time = str(input_str.split(" ", 2)[1])
+    If input_Time == 'h' or input_Time == 'H':
+     input1_Delay=(input_Delay*60*60)
+      Elif input_Time == 'm' or input_Time == 'M':
+       input1_Delay=(input_Delay*60)
         Else
-         Delay = 300
+         input1_Delay = 300
 
     await event.edit("**Starting Actress Profile Pic...\n\nDone !!! Check Your DP **")
     while True:
@@ -76,6 +76,6 @@ async def main(event):
 
         os.system("rm -rf donottouch.jpg")
 
-        await asyncio.sleep(Delay)
+        await asyncio.sleep(input1_Delay)
 
 CMD_HELP.update({"actressdp": ".actressdp\nUse - Auto-changing dp of Indian Actress."})
