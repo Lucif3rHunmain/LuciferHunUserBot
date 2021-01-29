@@ -13,6 +13,7 @@ from userbot.utils import admin_cmd
 import asyncio
 
 from time import sleep
+from userbot import CMD_HELP
 
 COLLECTION_STRINGZ = [
   "hacker-background"
