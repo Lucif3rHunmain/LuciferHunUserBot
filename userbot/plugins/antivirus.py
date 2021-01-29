@@ -43,7 +43,7 @@ async def _(event):
              await bot.forward_messages(chat, reply_message)
              response = await response
              await event.edit(f"Antivirus scan was completed.\n  Results  \n {response.message.message}")
-          elif response.text.startswith("Detections"):
+          elif response.text.exists("Detections"):
             await event.edit(f"Antivirus scan was completed.\n  Results  \n {response.message.message}")
 
 
@@ -83,7 +83,10 @@ async def _(event):
              await asyncio.sleep(10)
              await event.edit(f"Antivirus scan was completed.\n  Results  \n {response.message.message}")
           else:
-          	await event.edit(f"Antivirus scan was completed.\n  Results  \n {response.message.message}")
+             response = conv.wait_event(events.NewMessage(incoming=True,from_users=299969270))
+             await bot.forward_messages(chat, reply_message)
+             response = await response
+             await event.edit(f"Antivirus scan was completed.\n  Results  \n {response.message.message}")
 CMD_HELP.update(
     {
         "Antivirus Scan": ".vtscan"
