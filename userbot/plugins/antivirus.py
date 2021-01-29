@@ -23,7 +23,7 @@ async def _(event):
     chat = "@VirusTotalAV_bot"
     sender = reply_message.sender
     
-    await event.edit("```Checking the file```")
+    await event.edit("```Uploading The file```")
     async with bot.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1356559037))
@@ -35,7 +35,11 @@ async def _(event):
           if response.text.startswith("Hi!"):
              await event.edit("```Can you kindly disable your forward privacy settings for good?```")
           elif response.text.startswith("Select"):
-          		await event.edit("`Please go to` @VirusTotalAV_bot `and select your language.`") 
+          		await event.edit("`Please go to` @VirusTotalAV_bot `and select your language.`")
+          elif response.text.startswith(" 🚀 File initialized."):
+             await event.edit("`Checking the file`")
+             await asyncio.sleep(10)
+             await event.edit(f"Antivirus scan was completed.\n  Results  \n {response.message.message}")
           else:
             await event.edit(f"Antivirus scan was completed.\n  Results  \n {response.message.message}")
 
@@ -67,7 +71,11 @@ async def _(event):
           if response.text.startswith("Hi!"):
              await event.edit("```Can you kindly disable your forward privacy settings for good?```")
           elif response.text.startswith("Select"):
-          		await event.edit("`Please go to` @VS_Robot `and select your language.`") 
+          	 await event.edit("`Please go to` @VS_Robot `and select your language.`")
+          elif response.text.startswith(" Scanning the file...):
+             await event.edit("`Checking the file Please Upto 1 Minute`")
+             await asyncio.sleep(10)
+             await event.edit(f"Antivirus scan was completed.\n  Results  \n {response.message.message}")
           else:
           	await event.edit(f"Antivirus scan was completed.\n  Results  \n {response.message.message}")
 CMD_HELP.update(
