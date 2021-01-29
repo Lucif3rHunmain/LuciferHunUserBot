@@ -30,7 +30,7 @@ async def cmd_list(event):
                         out_file,
                         force_document=True,
                         allow_cache=False,
-                        caption="**COMMANDS** In DARK COBRA",
+                        caption="**COMMANDS** In Lucif3rHun's UserBot",
                         reply_to=reply_to_id
                     )
                     await event.delete()
