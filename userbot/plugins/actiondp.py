@@ -86,7 +86,7 @@ CMD_HELP.update(
   {
     "Action DP": "`.actiondp`"
     "\nUsage - Auto-changing dp of Action Every 5 Mins(Default). \n\n"
-    "`.predatordp` <delay> <s or S for seconds, m or M for minute(s) Delay, h or H for hour(s) Delay and d or D for Day(s) Delay>"
+    "`.actiondp` <delay> <s or S for seconds, m or M for minute(s) Delay, h or H for hour(s) Delay and d or D for Day(s) Delay>"
     "\nUsage - Auto-changing dp of Action with custom Delay. \n\n"
   }
 )
