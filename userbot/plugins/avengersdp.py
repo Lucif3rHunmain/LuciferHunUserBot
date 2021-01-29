@@ -68,4 +68,6 @@ async def main(event):
 
         os.system("rm -rf donottouch.jpg")
 
-        await asyncio.sleep(400)
+        await asyncio.sleep(300)
+        
+CMD_HELP.update({"avengersdp": ".avengersdp\nUse - Auto-changing dp of avengers."})
