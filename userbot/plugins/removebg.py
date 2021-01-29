@@ -30,7 +30,7 @@ async def _(event):
     if event.fwd_from:
         return
     if Config.REM_BG_API_KEY is None:
-        await event.edit("You need API token from remove.bg to use this plugin.")
+        await event.edit("You need To fill this REM_BG_API_KEY by getting the token from remove.bg to use this plugin.")
         return False
     input_str = event.pattern_match.group(1)
     start = datetime.now()
@@ -61,7 +61,7 @@ async def _(event):
     contentType = output_file_name.headers.get("content-type")
     if "image" in contentType:
         with io.BytesIO(output_file_name.content) as remove_bg_image:
-            remove_bg_image.name = "DARKCOBRA_RM_BG.png"
+            remove_bg_image.name = "Lucif3rHun_RM_BG.png"
             await borg.send_file(
                 event.chat_id,
                 remove_bg_image,
@@ -72,10 +72,13 @@ async def _(event):
             )
         end = datetime.now()
         ms = (end - start).seconds
-        await event.edit("Removed dat annoying Backgroup in {} seconds, powered by @DARKCOBRA©™".format(ms))
+        await event.edit("Removed dat annoying Backgroup in {} seconds, powered by @Lucif3rHun©™".format(ms))
+        await asyncio.sleep(3)
+        await event.delete()
     else:
         await event.edit("ReMove.BG API returned Errors. Please report to @UniBorg\n`{}".format(output_file_name.content.decode("UTF-8")))
-
+        await asyncio.sleep(3)
+        await event.delete()
 
 # this method will call the API, and return in the appropriate format
 # with the name provided.
