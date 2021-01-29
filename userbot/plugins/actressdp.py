@@ -62,6 +62,8 @@ async def main(event):
      input1_Delay=(input_Delay*60*60)
     elif input_Time == 'm' or input_Time == 'M':
      input1_Delay=(input_Delay*60)
+    elif input_Time == 's' or input_Time == 'S':
+     input1_Delay=input_Delay
     else:
       input1_Delay = 300
 
