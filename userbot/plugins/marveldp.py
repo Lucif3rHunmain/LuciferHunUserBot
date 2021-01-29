@@ -126,9 +126,9 @@ async def main(event):
 
 CMD_HELP.update(
   {
-    "gamersdp": "`.marveldp`\n"
-    "Usage - Auto-changing dp of Marvel Every 5 Mins(Default)."
-    "`.marvel <delay> <s or S for seconds, m or M for minute(s) Delay, h or H for hour(s) Delay and d or D for Day(s) Delay>`\n"
-    "Usage - Auto-changing dp of Marvel with custom Delay."
+    "Marvel DP": "`.marveldp`"
+    "\nUsage - Auto-changing dp of Marvel Every 5 Mins(Default). \n\n"
+    "`.marveldp` <delay> <s or S for seconds, m or M for minute(s) Delay, h or H for hour(s) Delay and d or D for Day(s) Delay>"
+    "\nUsage - Auto-changing dp of Marvel with custom Delay. \n\n"
   }
 )
