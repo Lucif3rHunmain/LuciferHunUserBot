@@ -7,7 +7,7 @@ from userbot.utils import admin_cmd
 import asyncio
 import shutil 
 import random, re
-
+from userbot import CMD_HELP
 
 FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 
