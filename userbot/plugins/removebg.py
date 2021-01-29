@@ -77,8 +77,7 @@ async def _(event):
         await asyncio.sleep(3)
         await event.delete()
     else:
-        await event.edit(" Reply to an image or url of an image for removing it bg.")
-)
+        await event.edit("Reply to an image or url of an image for removing it bg.")
         await asyncio.sleep(3)
         await event.delete()
 
