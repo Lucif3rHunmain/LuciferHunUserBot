@@ -58,11 +58,11 @@ async def main(event):
     input_str = "".join(event.text.split(maxsplit=1)[1:])
     input_Delay = int(input_str.split(" ", 2)[0])
     input_Time = str(input_str.split(" ", 2)[1])
-    If input_Time == 'h' or input_Time == 'H':
+    if input_Time == 'h' or input_Time == 'H':
      input1_Delay=(input_Delay*60*60)
-      Elif input_Time == 'm' or input_Time == 'M':
+      elif input_Time == 'm' or input_Time == 'M':
        input1_Delay=(input_Delay*60)
-        Else
+        else
          input1_Delay = 300
 
     await event.edit("**Starting Actress Profile Pic...\n\nDone !!! Check Your DP **")
