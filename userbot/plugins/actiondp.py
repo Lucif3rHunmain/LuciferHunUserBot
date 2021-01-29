@@ -84,9 +84,9 @@ async def main(event):
         await asyncio.sleep(input1_Delay)
 CMD_HELP.update(
   {
-    "gamersdp": "`.actiondp`\n"
-    "Usage - Auto-changing dp of Gamers Every 5 Mins(Default)."
-    "`.actiondp <delay> <s or S for seconds, m or M for minute(s) Delay, h or H for hour(s) Delay and d or D for Day(s) Delay>`\n"
-    "Usage - Auto-changing dp of Gamers with custom Delay."
+    "Action DP": "`.actiondp`"
+    "\nUsage - Auto-changing dp of Action Every 5 Mins(Default). \n\n"
+    "`.predatordp` <delay> <s or S for seconds, m or M for minute(s) Delay, h or H for hour(s) Delay and d or D for Day(s) Delay>"
+    "\nUsage - Auto-changing dp of Action with custom Delay. \n\n"
   }
 )
