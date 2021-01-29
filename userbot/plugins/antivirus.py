@@ -34,8 +34,7 @@ async def _(event):
           else:
              await asyncio.sleep(10)
              await event.delete()
-             click(text='🧪 Detections')
-             await event.client.send_file(event.chat_id, response.message)
+             await event.client.send_file(event.chat_id, response.message, reply_to=reply_message)
 
 @borg.on(admin_cmd(pattern=r"dtscan"))
 async def _(event):
@@ -63,7 +62,7 @@ async def _(event):
           else:
              await event.delete()
              await asyncio.sleep(10)
-             await event.client.send_file(event.chat_id, response.message)
+             await event.client.send_file(event.chat_id, response.message, reply_to=reply_message)
 CMD_HELP.update(
     {
         "Antivirus Scan": ".vtscan"
