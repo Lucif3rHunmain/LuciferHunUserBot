@@ -22,6 +22,7 @@ import os
 import requests
 from telethon import events
 from userbot.utils import progress, admin_cmd
+from userbot import CMD_HELP
 
 
 @borg.on(admin_cmd("rmbg ?(.*)"))
@@ -76,7 +77,8 @@ async def _(event):
         await asyncio.sleep(3)
         await event.delete()
     else:
-        await event.edit("ReMove.BG API returned Errors. Please report to @UniBorg\n`{}".format(output_file_name.content.decode("UTF-8")))
+        await event.edit(" Reply to an image or url of an image for removing it bg.")
+)
         await asyncio.sleep(3)
         await event.delete()
 
@@ -114,3 +116,12 @@ def ReTrieveURL(input_url):
         stream=True
     )
     return r
+
+CMD_HELP.update(
+{
+    "Remove Bg":"`.rmbg`"
+    "\nUsage: Reply to any media file with `.rmbg` to remove its bg. \n\n"
+                "`.rmbg` <url of an Image>"
+    "\nUsage: Enter `.rmbg` <url of am Image>. It will remove the bg of the image which the url redirects to.\n\n"
+}
+)
