@@ -64,6 +64,13 @@ async def main(event):
 
         os.system("rm -rf donottouch.jpg")
 
-        await asyncio.sleep(300)
+        await asyncio.sleep(input1_Delay)
 
-CMD_HELP.update({"spacedp": ".spacedp\nUse - Auto-changing dp of Space."})
+CMD_HELP.update(
+  {
+    "gamersdp": "`.spacedp`\n"
+    "Usage - Auto-changing dp of Gamers Every 5 Mins(Default)."
+    "`.spacedp <delay> <s or S for seconds, m or M for minute(s) Delay, h or H for hour(s) Delay and d or D for Day(s) Delay>`\n"
+    "Usage - Auto-changing dp of Gamers with custom Delay."
+  }
+)
