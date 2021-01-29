@@ -26,7 +26,12 @@ COLLECTION_STRING = [
   
   "pokemon-serena-wallpaper",
 
-  "anime-girls-wallpapers"
+  "anime-girls-wallpapers",
+  "cute-anime-wallpapers-hd",
+  "anime-christmas-wallpaper-hd",
+  "anime-samurai-girl-wallpaper",
+  "4k-anime-wallpapers",
+  "2560-x-1440-wallpaper-anime"
 
 ]
 
