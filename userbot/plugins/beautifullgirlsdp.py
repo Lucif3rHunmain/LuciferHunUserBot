@@ -48,7 +48,7 @@ COLLECTION_STRING = [
   "latina-wallpapers"
 ]
 
-async def bgirlspp():
+async def girlspp():
 
     os.system("rm -rf donot.jpg")
 
