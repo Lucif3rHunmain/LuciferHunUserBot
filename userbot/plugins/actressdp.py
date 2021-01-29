@@ -54,8 +54,16 @@ async def actresspp():
     urllib.request.urlretrieve(fy,"donottouch.jpg")
 
 @borg.on(admin_cmd(pattern="actressdp ?(.*)"))
-
 async def main(event):
+    input_str = "".join(event.text.split(maxsplit=1)[1:])
+    Delay = int(input_str.split(" ", 2)[0])
+    Time = str(input_str.split(" ", 2)[1])
+    If Time == 'h' or Time == 'H':
+     Delay=(Delay*60*60)
+      Elif Time == 'm' or Time == 'M':
+       Delay=(Delay*60)
+        Else
+         Delay = 300
 
     await event.edit("**Starting Actress Profile Pic...\n\nDone !!! Check Your DP **")
     while True:
@@ -68,6 +76,6 @@ async def main(event):
 
         os.system("rm -rf donottouch.jpg")
 
-        await asyncio.sleep(300)
-        
+        await asyncio.sleep(Delay)
+
 CMD_HELP.update({"actressdp": ".actressdp\nUse - Auto-changing dp of Indian Actress."})
