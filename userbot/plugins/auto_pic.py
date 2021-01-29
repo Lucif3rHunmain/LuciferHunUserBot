@@ -71,6 +71,97 @@ async def main(event):
 
         await asyncio.sleep(400)
 
+import requests , re , random 
+
+import urllib , os 
+
+from telethon.tl import functions
+
+from datetime import datetime
+
+from PIL import Image, ImageDraw, ImageFont
+from userbot import CMD_HELP, CMD_LIST
+
+from userbot.utils import admin_cmd
+
+import asyncio
+
+from time import sleep
+
+COLLECTION_STRING = [
+
+  "sara-jean-underwood-desktop-wallpapers",
+
+  "kate-upton-wallpaper-1920x1080",
+
+  "emma-stone-hd-wallpaper",
+
+  "celebrities-wallpaper",
+
+  "scarlet-witch-hd-wallpaper",
+  
+  "jessica-simpson-wallpapers",
+
+  "ellie-goulding-wallpaper-hd",
+
+  "katy-perry-hd-wallpaper-1920x1080",
+
+  "most-beautiful-women-hd-wallpaper",
+
+  "beautiful-ladies-wallpapers",
+
+  "wallpapers-of-women",
+
+  "hd-wallpapers-1080p-girls",
+
+  "selena-gomez-2018-wallpaper",
+
+  "pretty-girls-wallpapers",
+
+  "latina-wallpapers",
+]
+
+async def girlspp():
+
+    os.system("rm -rf donot.jpg")
+
+    rnd = random.randint(0, len(COLLECTION_STRING) - 1)
+
+    pack = COLLECTION_STRING[rnd]
+
+    pc = requests.get("http://getwallpapers.com/collection/" + pack).text
+
+    f = re.compile('/\w+/full.+.jpg')
+
+    f = f.findall(pc)
+
+    fy = "http://getwallpapers.com"+random.choice(f)
+
+    print(fy)
+
+    if not os.path.exists("f.ttf"):
+
+        urllib.request.urlretrieve("https://github.com/rebel6969/mym/raw/master/Rebel-robot-Regular.ttf","f.ttf")
+
+    urllib.request.urlretrieve(fy,"donottouch.jpg")
+
+@borg.on(admin_cmd(pattern="girlsdp ?(.*)"))
+
+async def main(event):
+
+    await event.edit("**Starting Girls Profile Pic...\n\nDone !!! Check Your DP **")
+
+    while True:
+
+        await girlspp()
+
+        file = await event.client.upload_file("donottouch.jpg")  
+
+        await event.client(functions.photos.UploadProfilePhotoRequest( file))
+
+        os.system("rm -rf donottouch.jpg")
+
+        await asyncio.sleep(400)
 
 import requests , re , random 
 
@@ -683,24 +774,26 @@ async def main(event):
 CMD_HELP.update(
     {
         "auto_pic": ".actressdp"
-        "\nUsage: Change ur profile pic automatically\n\n"
+        "\nUsage: Change ur profile pic to actress automatically\n\n"
+        ".actressdp"
+        "\nUsage: Changes ur profile pic to girls automatically\n\n"
         ".avengersdp"
-        "\nUsage: Change ur profile pic automatically\n\n"
+        "\nUsage: Change ur profile pic to avengers automatically\n\n"
         ".hacker"
-        "\nUsage: Change ur profile pic automatically\n\n"
+        "\nUsage: Change ur profile pic to hacker automatically\n\n"
         ".marveldp"
-        "\nUsage: Change ur profile pic automatically\n\n"
+        "\nUsage: Change ur profile pic to marvel automatically\n\n"
         ".predatordp"
-        "\nUsage: Change ur profile pic automatically\n\n"
+        "\nUsage: Change ur profile pic to predator automatically\n\n"
         ".spacedp"
-        "\nUsage: Change ur profile pic automatically\n\n"
+        "\nUsage: Change ur profile pic to space automatically\n\n"
         ".survivorpfp"
-        "\nUsage: Change ur profile pic automatically\n\n"
+        "\nUsage: Change ur profile pic to survivor automatically\n\n"
         ".actiondp"
-        "\nUsage: Change ur profile pic automatically\n\n"
+        "\nUsage: Change ur profile pic to action automatically\n\n"
         ".animedp"
-        "\nUsage: Change ur profile pic automatically\n\n"
+        "\nUsage: Change ur profile pic to anime automatically\n\n"
         ".gamerpfp"
-        "\nUsage: Change ur profile pic automatically\n\n"
+        "\nUsage: Change ur profile pic to gamer automatically\n\n"
         }
 )
