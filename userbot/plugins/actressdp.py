@@ -80,4 +80,11 @@ async def main(event):
 
         await asyncio.sleep(input1_Delay)
 
-CMD_HELP.update({"actressdp": ".actressdp\nUse - Auto-changing dp of Indian Actress."})
+CMD_HELP.update(
+  {
+    "gamersdp": "`.actressdp`\n"
+    "Usage - Auto-changing dp of Actresses Every 5 Mins(Default)."
+    "`.actressdp <delay> <s or S for seconds, m or M for minute(s) Delay, h or H for hour(s) Delay and d or D for Day(s) Delay>`\n"
+    "Usage - Auto-changing dp of Actress with custom Delay."
+  }
+)
