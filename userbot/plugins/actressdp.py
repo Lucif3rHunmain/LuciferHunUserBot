@@ -70,4 +70,4 @@ async def main(event):
 
         await asyncio.sleep(300)
         
-CMD_HELP.update({"avengersdp": ".avengersdp\nUse - Auto-changing dp of Indian Actress."})
+CMD_HELP.update({"actressdp": ".actressdp\nUse - Auto-changing dp of Indian Actress."})
