@@ -39,6 +39,6 @@ CMD_HELP.update(
     {
         "Fakemail": "__**PLUGIN NAME :** Tempmail__\
     \n\n📌** CMD ★** `.tmail`\
-    \n**USAGE   ★  **Get yourself a Tempmail without going to web
+    \n**USAGE   ★  **Get yourself a Tempmail without going to web"
 }
 )
