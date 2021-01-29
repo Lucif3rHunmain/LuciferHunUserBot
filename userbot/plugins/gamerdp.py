@@ -28,9 +28,11 @@ async def gamepp():
     if not os.path.exists("f.ttf"):
         urllib.request.urlretrieve("https://github.com/rebel6969/mym/raw/master/Rebel-robot-Regular.ttf","f.ttf")
     urllib.request.urlretrieve(fy,"donottouch.jpg")
+    
 @borg.on(admin_cmd(pattern="gamerpfp ?(.*)"))
+
 async def main(event):
-      input_str = "".join(event.text.split(maxsplit=1)[1:])
+    input_str = "".join(event.text.split(maxsplit=1)[1:])
     input_Delay = int(input_str.split(" ", 2)[0])
     input_Time = str(input_str.split(" ", 2)[1])
     if input_Time == 'd' or input_Time == 'D':
