@@ -8,7 +8,7 @@ from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from userbot import bot, CMD_HELP
 from userbot.utils import admin_cmd
 
-@borg.on(admin_cmd(pattern=r"vtscan"))
+@borg.on(admin_cmd("scan ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return 
@@ -16,7 +16,10 @@ async def _(event):
        await event.edit("```Reply to any user message.```")
        return
     reply_message = await event.get_reply_message() 
-    
+    if not reply_message.media:
+       await event.edit("```reply to a media message```")
+       return
+
     chat = "@VirusTotalAV_bot"
     sender = reply_message.sender
     
@@ -32,9 +35,13 @@ async def _(event):
           if response.text.startswith("Hi!"):
              await event.edit("```Can you kindly disable your forward privacy settings for good?```")
           else:
-             await event.client.send_message(event.chat_id, response.message, reply_to=reply_message)
+          	if response.text.startswith("Select"):
+          		await event.edit("`Please go to` @VirusTotalAV_bot `and select your language.`") 
+          else:
+          	await event.edit(f"Antivirus scan was completed.\n  Results  \n {response.message.message}")
 
-@borg.on(admin_cmd(pattern=r"dtscan"))
+
+@borg.on(admin_cmd("scan ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return 
@@ -42,6 +49,9 @@ async def _(event):
        await event.edit("```Reply to any user message.```")
        return
     reply_message = await event.get_reply_message() 
+    if not reply_message.media:
+       await event.edit("```reply to a media message```")
+       return
     
     chat = "@VS_Robot"
     sender = reply_message.sender
@@ -58,7 +68,10 @@ async def _(event):
           if response.text.startswith("Hi!"):
              await event.edit("```Can you kindly disable your forward privacy settings for good?```")
           else:
-             await event.client.send_message(event.chat_id, response.message, reply_to=reply_message)
+          	if response.text.startswith("Select"):
+          		await event.edit("`Please go to` @VS_Robot `and select your language.`") 
+          else:
+          	await event.edit(f"Antivirus scan was completed.\n  Results  \n {response.message.message}")
 CMD_HELP.update(
     {
         "Antivirus Scan": ".vtscan"
