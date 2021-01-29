@@ -57,7 +57,19 @@ async def actionpp():
 @borg.on(admin_cmd(pattern="actiondp ?(.*)"))
 
 async def main(event):
-
+    input_str = "".join(event.text.split(maxsplit=1)[1:])
+    input_Delay = int(input_str.split(" ", 2)[0])
+    input_Time = str(input_str.split(" ", 2)[1])
+    if input_Time == 'd' or input_Time == 'D':
+     input1_Delay=(input_Delay*24*60*60)
+    elif input_Time == 'h' or input_Time == 'H':
+     input1_Delay=(input_Delay*60*60)
+    elif input_Time == 'm' or input_Time == 'M':
+     input1_Delay=(input_Delay*60)
+    elif input_Time == 's' or input_Time == 'S':
+     input1_Delay=input_Delay
+    else:
+      input1_Delay = 300
     await event.edit("**Uplaoding Walpapers \n please wait...\n\nDone !!! Check Your DP") 
     while True:
 
@@ -69,5 +81,12 @@ async def main(event):
 
         os.system("rm -rf donottouch.jpg")
 
-        await asyncio.sleep(300)
-CMD_HELP.update({"actiondp": ".actiondp\nUse - Auto-changing dp of Action."})
+        await asyncio.sleep(input1_Delay)
+CMD_HELP.update(
+  {
+    "gamersdp": "`.actiondp`\n"
+    "Usage - Auto-changing dp of Gamers Every 5 Mins(Default)."
+    "`.actiondp <delay> <s or S for seconds, m or M for minute(s) Delay, h or H for hour(s) Delay and d or D for Day(s) Delay>`\n"
+    "Usage - Auto-changing dp of Gamers with custom Delay."
+  }
+)
