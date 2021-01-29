@@ -7,9 +7,9 @@ from telethon import TelegramClient
 
 from userbot import bot
 from userbot.utils import load_module, start_assistant
-from var import Var
+from userbot.uniborgConfig import Config
 
-LH = Var.PRIVATE_GROUP_ID
+LH = Config.PRIVATE_GROUP_ID
 LOAD_USERBOT = os.environ.get("LOAD_USERBOT", True)
 LOAD_ASSISTANT = os.environ.get("LOAD_ASSISTANT", True)    
 
