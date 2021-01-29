@@ -8,7 +8,7 @@ from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from userbot import bot, CMD_HELP
 from userbot.utils import admin_cmd
 
-@borg.on(admin_cmd("scan ?(.*)"))
+@borg.on(admin_cmd("vtscan ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return 
@@ -40,7 +40,7 @@ async def _(event):
             await event.edit(f"Antivirus scan was completed.\n  Results  \n {response.message.message}")
 
 
-@borg.on(admin_cmd("scan ?(.*)"))
+@borg.on(admin_cmd("dtscan ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return 
