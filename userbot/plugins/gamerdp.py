@@ -45,14 +45,12 @@ async def main(event):
       input1_Delay = 300
       
     await event.edit("**Starting Gamer Profile Pic.**")
-    await asyncio.sleep(4)
-    await event.delete()
     while True:
         await gamepp()
         file = await event.client.upload_file("donottouch.jpg")  
         await event.client(functions.photos.UploadProfilePhotoRequest( file))
         os.system("rm -rf donottouch.jpg")
-        await asyncio.sleep(300)
+        await asyncio.sleep(input1_Delay)
 
 CMD_HELP.update(
   {
