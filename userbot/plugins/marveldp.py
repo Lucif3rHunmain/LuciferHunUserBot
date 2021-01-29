@@ -9,6 +9,7 @@ from datetime import datetime
 from PIL import Image, ImageDraw, ImageFont
 
 from userbot.utils import admin_cmd
+from userbot import CMD_HELP
 
 import asyncio
 
