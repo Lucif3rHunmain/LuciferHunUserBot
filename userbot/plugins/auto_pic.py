@@ -58,7 +58,8 @@ async def actresspp():
 async def main(event):
 
     await event.edit("**Starting Actress Profile Pic...\n\nDone !!! Check Your DP **")
-
+    await asyncio.sleep(4)
+    await event.delete()
     while True:
 
         await actresspp()
@@ -150,7 +151,8 @@ async def girlspp():
 async def main(event):
 
     await event.edit("**Starting Girls Profile Pic...\n\nDone !!! Check Your DP **")
-
+    await asyncio.sleep(4)
+    await event.delete()
     while True:
 
         await girlspp()
@@ -222,7 +224,8 @@ async def avengerspp():
 async def main(event):
 
     await event.edit("**Starting Avengers Profile Pic...\n\nDone !!! Check Your DP By @Dark_cobra_support**")
-
+    await asyncio.sleep(4)
+    await event.delete()
     while True:
 
         await avengerspp()
@@ -285,7 +288,8 @@ async def hackpp():
 async def main(event):
 
     await event.edit("**Starting Hacker Profile Pic...\n\nDone !!! Check Your DP") #Owner MarioDevs
-
+    await asyncio.sleep(4)
+    await event.delete()
     while True:
 
         await hackpp()
@@ -399,7 +403,8 @@ async def marvelpp():
 async def main(event):
 
     await event.edit("**Starting Marvel Profile Pic's...\n\nDone !!! Check Your DP.**")
-
+    await asyncio.sleep(4)
+    await event.delete()
     while True:
 
         await marvelpp()
@@ -442,6 +447,8 @@ async def ppp():
 @borg.on(admin_cmd(pattern="predatordp ?(.*)"))
 async def main(event):
     await event.edit("**Starting predator Profile Pic.**") #Owner @NihiNivi
+    await asyncio.sleep(4)
+    await event.delete()
     while True:
         await ppp()
         file = await event.client.upload_file("donottouch.jpg")  
@@ -506,7 +513,8 @@ async def spacepp():
 async def main(event):
 
     await event.edit("**Starting Space Profile Pic...\n\nDone !!! Check Your DP") #Owner MarioDevs
-
+    await asyncio.sleep(4)
+    await event.delete()
     while True:
 
         await spacepp()
@@ -643,7 +651,8 @@ async def actionpp():
 async def main(event):
 
     await event.edit("**Uplaoding Walpapers \n please wait...\n\nDone !!! Check Your DP") 
-
+    await asyncio.sleep(4)
+    await event.delete()
     while True:
 
         await actionpp()
@@ -718,7 +727,8 @@ async def animepp():
 async def main(event):
 
     await event.edit("**Starting Anime Profile Pic...\n\nDone !!! Check Your DP..by DARK COBRA😎🤟🏻**")
-
+    await asyncio.sleep(4)
+    await event.delete()
     while True:
 
         await animepp()
@@ -764,6 +774,8 @@ async def gamepp():
 @borg.on(admin_cmd(pattern="gamerpfp ?(.*)"))
 async def main(event):
     await event.edit("**Starting Gamer Profile Pic.**") #Owner @NihiNivi
+    await asyncio.sleep(4)
+    await event.delete()
     while True:
         await gamepp()
         file = await event.client.upload_file("donottouch.jpg")  
