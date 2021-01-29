@@ -122,7 +122,7 @@ COLLECTION_STRING = [
   "latina-wallpapers",
 ]
 
-async def girlspp():
+async def bgirlspp():
 
     os.system("rm -rf donot.jpg")
 
@@ -146,7 +146,7 @@ async def girlspp():
 
     urllib.request.urlretrieve(fy,"donottouch.jpg")
 
-@borg.on(admin_cmd(pattern="girlsdp ?(.*)"))
+@borg.on(admin_cmd(pattern="bgirlsdp ?(.*)"))
 
 async def main(event):
 
@@ -155,7 +155,7 @@ async def main(event):
     await event.delete()
     while True:
 
-        await girlspp()
+        await bgirlspp()
 
         file = await event.client.upload_file("donottouch.jpg")  
 
