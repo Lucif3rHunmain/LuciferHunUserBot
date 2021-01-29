@@ -80,9 +80,9 @@ async def main(event):
 
 CMD_HELP.update(
   {
-    "gamersdp": "`.spacedp`\n"
-    "Usage - Auto-changing dp of Gamers Every 5 Mins(Default)."
-    "`.spacedp <delay> <s or S for seconds, m or M for minute(s) Delay, h or H for hour(s) Delay and d or D for Day(s) Delay>`\n"
-    "Usage - Auto-changing dp of Gamers with custom Delay."
+    "Space DP": "`.spcedp`"
+    "\nUsage - Auto-changing dp of Space Every 5 Mins(Default). \n\n"
+    "`.spacedp` <delay> <s or S for seconds, m or M for minute(s) Delay, h or H for hour(s) Delay and d or D for Day(s) Delay>"
+    "\nUsage - Auto-changing dp of Space with custom Delay. \n\n"
   }
 )
