@@ -92,34 +92,6 @@ from time import sleep
 COLLECTION_STRING = [
 
   "sara-jean-underwood-desktop-wallpapers",
-
-  "kate-upton-wallpaper-1920x1080",
-
-  "emma-stone-hd-wallpaper",
-
-  "celebrities-wallpaper",
-
-  "scarlet-witch-hd-wallpaper",
-  
-  "jessica-simpson-wallpapers",
-
-  "ellie-goulding-wallpaper-hd",
-
-  "katy-perry-hd-wallpaper-1920x1080",
-
-  "most-beautiful-women-hd-wallpaper",
-
-  "beautiful-ladies-wallpapers",
-
-  "wallpapers-of-women",
-
-  "hd-wallpapers-1080p-girls",
-
-  "selena-gomez-2018-wallpaper",
-
-  "pretty-girls-wallpapers",
-
-  "latina-wallpapers",
 ]
 
 async def bgirlspp():
