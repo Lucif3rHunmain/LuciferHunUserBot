@@ -29,7 +29,7 @@ async def gamepp():
         urllib.request.urlretrieve("https://github.com/rebel6969/mym/raw/master/Rebel-robot-Regular.ttf","f.ttf")
     urllib.request.urlretrieve(fy,"donottouch.jpg")
     
-@borg.on(admin_cmd(pattern="gamerpfp ?(.*)"))
+@borg.on(admin_cmd(pattern="gamerdp ?(.*)"))
 
 async def main(event):
     input_str = "".join(event.text.split(maxsplit=1)[1:])
@@ -56,9 +56,9 @@ async def main(event):
 
 CMD_HELP.update(
   {
-    "gamersdp": "`.gamerphp`\n"
-    "Usage - Auto-changing dp of Gamers Every 5 Mins(Default)."
-    "`.gamerphp <delay> <s or S for seconds, m or M for minute(s) Delay, h or H for hour(s) Delay and d or D for Day(s) Delay>`\n"
-    "Usage - Auto-changing dp of Gamers with custom Delay."
+    "Gamer DP": "`.gamerdp`"
+    "\nUsage - Auto-changing dp of Games Every 5 Mins(Default). \n\n"
+    "`.gamerdp` <delay> <s or S for seconds, m or M for minute(s) Delay, h or H for hour(s) Delay and d or D for Day(s) Delay>"
+    "\nUsage - Auto-changing dp of Games with custom Delay. \n\n"
   }
 )
