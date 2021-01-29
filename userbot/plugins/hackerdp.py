@@ -61,4 +61,4 @@ async def main(event):
 
         await asyncio.sleep(300)
 
-CMD_HELP.update({"hackerdp": ".hackerdp\nUse - Auto-changing dp of Hccker."})
+CMD_HELP.update({"hackerdp": ".hackerdp\nUse - Auto-changing dp of Hacker."})
