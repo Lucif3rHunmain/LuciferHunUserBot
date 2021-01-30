@@ -320,7 +320,11 @@ async def main(event):
      else:
       input1_Delay = 300
 
-    await event.edit("**Starting Anime Profile Pics... **")
+    await event.edit("**Starting Comics Profile Pics... **")
+    await asyncio.sleep(3)
+    await event.edit("**Started Check Your DP in Few Seconds**")
+    await asyncio.sleep(3)
+    await event.delete()
     while True:
 
         await animepp()
@@ -330,10 +334,8 @@ async def main(event):
         await event.client(functions.photos.UploadProfilePhotoRequest( file))
 
         os.system("rm -rf donottouch.jpg")
-        await event.edit("**Done !!! Check Your DP**")
-        await asyncio.sleep(3)
-        await event.delete()
         await asyncio.sleep(input1_Delay)
+
 CMD_HELP.update(
   {
     "Anime DP": "`.comicsdp`"
