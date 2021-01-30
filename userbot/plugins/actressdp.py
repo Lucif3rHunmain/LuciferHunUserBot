@@ -56,6 +56,8 @@ async def actresspp():
 @borg.on(admin_cmd(pattern="actressdp ?(.*)"))
 async def main(event):
     input_str = "".join(event.text.split(maxsplit=1)[1:])
+    if input_str == ""
+     input1_Delay = 300
     input_Delay = int(input_str.split(" ", 2)[0])
     input_Time = str(input_str.split(" ", 2)[1])
     if input_Time == 'd' or input_Time == 'D':
