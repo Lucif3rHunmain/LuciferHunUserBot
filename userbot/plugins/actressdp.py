@@ -69,7 +69,7 @@ async def main(event):
     else:
       input1_Delay = 300
 
-    await event.edit("**Starting Actress Profile Pic...\n\nDone !!! Check Your DP **")
+    await event.edit("**Starting Actress Profile Pics... **")
     while True:
 
         await actresspp()
@@ -79,7 +79,9 @@ async def main(event):
         await event.client(functions.photos.UploadProfilePhotoRequest( file))
 
         os.system("rm -rf donottouch.jpg")
-
+        await event.edit("**Done !!! Check Your DP**")
+        await asyncio.sleep(2)
+        await event.delete()
         await asyncio.sleep(input1_Delay)
 
 CMD_HELP.update(
