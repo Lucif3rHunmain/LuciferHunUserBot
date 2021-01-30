@@ -45,7 +45,9 @@ COLLECTION_STRING = [
 
   "pretty-girls-wallpapers",
 
-  "latina-wallpapers"
+  "latina-wallpapers",
+
+  "celebrities-wallpaper"
 ]
 
 async def girlspp():
