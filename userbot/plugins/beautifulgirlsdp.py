@@ -16,38 +16,66 @@ import asyncio
 from time import sleep
 
 COLLECTION_STRING = [
-
-  "sara-jean-underwood-desktop-wallpapers",
-  
-  "kate-upton-wallpaper-1920x1080",
-
-  "emma-stone-hd-wallpaper",
-
-  "celebrities-wallpaper",
-
-  "scarlet-witch-hd-wallpaper",
-  
-  "jessica-simpson-wallpapers",
-
-  "ellie-goulding-wallpaper-hd",
-
-  "katy-perry-hd-wallpaper-1920x1080",
-
-  "most-beautiful-women-hd-wallpaper",
-
-  "beautiful-ladies-wallpapers",
-
-  "wallpapers-of-women",
-
-  "hd-wallpapers-1080p-girls",
-
-  "selena-gomez-2018-wallpaper",
-
-  "pretty-girls-wallpapers",
-
-  "latina-wallpapers",
-
-  "celebrities-wallpaper"
+"girls-and-muscle-cars-wallpaper", 
+"emma-stone-hd-wallpaper", 
+"emma-watson-hd-wallpapers-1080p", 
+"sexy-desktop-wallpapers-and-backgrounds", 
+"beautiful-women-faces-wallpaper", 
+"country-girl-wallpapers", 
+"sofia-vergara-wallpaper-hd", 
+"dirt-bike-girls-wallpaper", 
+"girls-and-trucks-wallpapers", 
+"sara-jean-underwood-desktop-wallpapers", 
+"motorcycle-girl-wallpaper", 
+"girls-on-motorcycles-wallpapers", 
+"kaley-cuoco-wallpaper-1920x1080", 
+"pin-up-girls-hd-wallpaper", 
+"gorgeous-redhead-wallpaper", 
+"melania-trump-wallpaper", 
+"women-wallpapers-for-desktop", 
+"kate-winslet-wallpapers-titanic", 
+"taylor-momsen-wallpaper-hd", 
+"danica-patrick-go-daddy-wallpapers", 
+"katrina-kaif-wallpapers-hd", 
+"jesse-jane-wallpapers", 
+"wwe-paige-wallpaper", 
+"kate-upton-wallpaper-1920x1080", 
+"cute-teen-girl-wallpapers", 
+"teenage-girl-wallpaper", 
+"ellie-goulding-wallpaper-hd", 
+"sasha-gray-wallpaper", 
+"jessica-simpson-wallpapers", 
+"marilyn-monroe-wallpaper", 
+"car-girl-wallpapers", 
+"teen-girl-wallpaper-for-computer", 
+"miley-cyrus-wallpaper-23", 
+"pretty-faces-wallpapers", 
+"michelle-rodriguez-wallpaper-hd", 
+"megan-fox-supergirl-wallpaper", 
+"girl-and-bike-wallpaper", 
+"emma-stone-wallpaper-1920x1080", 
+"melanie-martinez-cry-baby-wallpaper", 
+"pretty-girls-wallpapers", 
+"pakistani-girl-wallpaper", 
+"jojo-wallpaper", 
+"jessica-chobot-wallpaper", 
+"girls-surfing-wallpaper", 
+"beauty-salon-wallpaper", 
+"redhead-wallpaper", 
+"scarlet-witch-hd-wallpaper", 
+"emily-ratajkowski-wallpaper", 
+"emma-watson-hd-wallpaper-1920x1080", 
+"beautiful-ladies-wallpapers", 
+"vault-girl-fallout-wallpapers", 
+"taeyeon-wallpaper-2018", 
+"amy-lee-hd-wallpaper", 
+"military-pin-up-wallpaper", 
+"jessica-simpson-daisy-duke-wallpaper", 
+"water-girl-wallpaper", 
+"iphone-girl-wallpapers", 
+"surfer-girl-wallpaper", 
+"chopper-girls-motorcycle-wallpaper", 
+"ford-mustang-wallpaper-with-girls"
 ]
 
 async def girlspp():
