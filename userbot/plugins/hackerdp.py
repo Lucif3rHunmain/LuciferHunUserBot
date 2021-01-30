@@ -63,7 +63,7 @@ async def main(event):
      else:
       input1_Delay = 300
 
-    await event.edit("**Starting Actress Profile Pics... **")
+    await event.edit("**Starting Hacker's Profile Pics... **")
     while True:
 
         await actresspp()
