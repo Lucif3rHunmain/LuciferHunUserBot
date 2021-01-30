@@ -9,7 +9,7 @@ import spamwatch as spam_watch
 from validators.url import url
 
 from .. import *
-from userbot.uniborgConfig import config
+from ..config import config
 
 # =================== CONSTANT ===================
 USERID = bot.uid
