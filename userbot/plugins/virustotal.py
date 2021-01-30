@@ -23,9 +23,10 @@ async def detect(event):
     catevent = await edit_or_reply(event, "`Scanning the file for any kind of virus or malware and abnormal behaviour`")
     url = 'https://www.virustotal.com/vtapi/v2/file/scan'
     params = {'apikey': VIRUSTOTAL_API_KEY}
-    files = {'file': open(media, 'rb'))}
+    files = {'file': open(media, 'rb')}
     response = requests.post(url, files=files, params=params)
     print(response.json())
+    catevent = await edit_or_reply(event,f"{response.json()}")
     os.remove(media)
 CMD_HELP.update(
         {
