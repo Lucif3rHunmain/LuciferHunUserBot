@@ -40,8 +40,8 @@ async def detect(event):
     reporturl = 'https://www.virustotal.com/vtapi/v2/file/report'
     params = {'apikey': Config.VIRUSTOTAL_API_KEY, 'resource': resource}
     response1 = requests.get(reporturl, params=params)
-    await event.edit(f,"File Hash \n Md5- {md5} \n Sha1- {sha1} \n Sha256- {sha256} \n Resutls = {response1.json()}")
-    
+    await event.edit(f,"File Hash \n Md5- {md5} \n Sha1- {sha1} \n Sha256- {sha256}")
+    await event.edit(response1.json())
     os.remove(media)
 CMD_HELP.update(
         {
