@@ -31,7 +31,7 @@ async def vtscan(event):
     vebrose_msg = vresponse.json()["vebrose_msg"]
     vebrose_msg.text.startswith("Scan rquest successfully queued, come back later for the report")
     catevent = await edit_or_reply(event, "File successfully uploaded for scanning. Wait for 1 mintues to get the scan results")
-    catevent = await edit_or_reply(event "File Scan Initialized")
+    catevent = await edit_or_reply(event, "File Scan Initialized")
     await asyncio.sleep(10)
     md5 = vresponse.json()["md5"]
     sha1 = vresponse.json()["sha1"]
