@@ -135,6 +135,7 @@ if ENV:
         # Deepai value can get from https://deepai.org/
         DEEP_AI = os.environ.get("DEEP_AI", None)
         #for tag logs
+        VIRUSTOTAL_API_KEY = os.environ.get("VIRUSTOTAL_API_KEY", None)
         TAG_LOG = os.environ.get("TAG_LOG", None)
        
 else:
