@@ -16,59 +16,80 @@ import asyncio
 from time import sleep
 
 COLLECTION_STRING = [
-
-  "avengers-logo-wallpaper",
-
-  "avengers-hd-wallpapers-1080p",
-
-  "avengers-iphone-wallpaper",
-
-  "iron-man-wallpaper-1920x1080",
-
-  "iron-man-wallpapers",
-
-  "Marvel-Shield-iPhone-Wallpaper",
-
-  "Shield-Logo-Wallpaper",
-
-  "Marvel-Shield-Logo-Wallpaper",
-
-  "Agents-of-Shield-Wallpaper",
-
-  "Agents-of-Shield-iPhone-Wallpaper",
-
-  "Agents-of-Shield-Wallpapers-HD"
-
-  "Thor-Wallpaper-1920x1080",
-
-  "Thor-Wallpapers",
-
-  "Avengers-HD-Wallpapers-1080p",
-
-  "Avengers-Wallpaper-for-Desktop",
-
-   "Avengers-4K-Wallpaper",
-
-  "Avengers-Age-of-Ultron-Wallpaper",
-
-  "Avengers-Civil-War-Wallpaper",
-
-  "Avengers-2-Wallpapers",
-
-  "Avengers-Logo-Wallpaper",
-
-  "Marvel-Avengers-Desktop-Wallpaper",
-
-  "4K-Deadpool-Wallpaper",
-
-  "3D-Deadpool-Logo-Wallpaper",
-
-  "Deadpool-HD-Desktop-Wallpaper",
-
-  "Cool-Deadpool-Wallpaper",
-
-  "Thor-Wallpaper-HD"
-  
+"avengers-logo-wallpaper",
+"avengers-hd-wallpapers-1080p",
+"avengers-iphone-wallpaper",
+"iron-man-wallpaper-1920x1080",
+"iron-man-wallpapers",
+"Marvel-Shield-iPhone-Wallpaper",
+"Shield-Logo-Wallpaper",
+"Marvel-Shield-Logo-Wallpaper",
+"Agents-of-Shield-Wallpaper",
+"Agents-of-Shield-iPhone-Wallpaper",
+"Agents-of-Shield-Wallpapers-HD"
+"Thor-Wallpaper-1920x1080",
+"Thor-Wallpapers",
+"Avengers-HD-Wallpapers-1080p",
+"Avengers-Wallpaper-for-Desktop",
+"Avengers-4K-Wallpaper",
+"Avengers-Age-of-Ultron-Wallpaper",
+"Avengers-Civil-War-Wallpaper",
+"Avengers-2-Wallpapers",
+"Avengers-Logo-Wallpaper",
+"Marvel-Avengers-Desktop-Wallpaper",
+"4K-Deadpool-Wallpaper",
+"3D-Deadpool-Logo-Wallpaper",
+"Deadpool-HD-Desktop-Wallpaper",
+"Cool-Deadpool-Wallpaper",
+"Thor-Wallpaper-HD"
+"marvel-shield-logo-wallpaper",
+"marvel-venom-wallpaper-hd",
+"marvel-hd-wallpapers-1080p",
+"marvel-screensavers-and-wallpaper",
+"4k-wallpaper-marvel",
+"black-panther-marvel-hd-wallpaper",
+"marvel-3d-wallpapers",
+"marvel-and-dc-wallpaper",
+"marvel-dual-monitor-wallpaper",
+"minimalist-marvel-wallpaper",
+"marvel-comic-book-wallpaper",
+"marvel-iphone-wallpaper",
+"marvel-rogue-wallpaper",
+"hd-marvel-wallpapers-for-desktop",
+"marvel-wallpaper-iphone",
+"all-marvel-characters-wallpaper",
+"marvel-wallpapers",
+"marvel-wallpaper-hd",
+"marvel-girls-wallpaper",
+"marvel-carnage-hd-wallpaper",
+"marvel-phone-wallpapers",
+"marvel-comics-wallpaper-desktop-wallpapers",
+"marvel-vs-capcom-wallpaper",
+"marvel-comics-wallpaper",
+"marvel-super-heroes-wallpaper",
+"wolverine-marvel-wallpaper",
+"ds-vs-marvel-wallpaper",
+"marvel-ultimate-alliance-2-wallpaper",
+"daredevil-marvel-wallpapers",
+"captain-marvel-wallpaper",
+"marvel-comic-wallpaper",
+"marvel-superheroes-wallpaper",
+"ms-marvel-wallpaper",
+"marvel-civil-war-wallpaper",
+"marvel-wallpaper",
+"marvel-vs-capcom-3-wallpaper",
+"dc-vs-marvel-wallpaper",
+"marvel-avengers-desktop-wallpaper",
+"dc-marvel-superheroes-wallpaper",
+"civil-war-marvel-hd-wallpaper",
+"the-vision-marvel-wallpaper",
+"marvel-red-skull-wallpaper",
+"marvel-villains-wallpaper",
+"marvel-wallpaper-for-desktop",
+"marvel-age-of-ultron-wallpaper",
+"hawkeye-wallpaper-marvel",
+"marvel-wallpapers-1920x1080",
+"marvel-shield-iphone-wallpaper",
 ]
 
 async def marvelpp():
