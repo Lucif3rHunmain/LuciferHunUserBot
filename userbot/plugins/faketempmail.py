@@ -5,7 +5,7 @@ from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from uniborg.util import admin_cmd
 from userbot import bot, CMD_HELP
 
-@borg.on(admin_cmd("tmail ?(.*)"))
+@borg.on(admin_cmd("ftmail ?(.*)"))
 async def _(event):
 
     chat = "@fakemailbot"
