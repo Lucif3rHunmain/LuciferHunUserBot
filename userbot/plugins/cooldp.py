@@ -50,7 +50,7 @@ COLLECTION_STRING = [
   "justin-maller-4k-wallpapers"
 ]
 
-async def girlspp():
+async def coolpp():
 
     os.system("rm -rf donot.jpg")
 
@@ -94,7 +94,11 @@ async def main(event):
      else:
       input1_Delay = 300
 
-    await event.edit("**Starting Anime Profile Pics... **")
+    await event.edit("**Starting Cool Profile Pics... **")
+    await asyncio.sleep(3)
+    await event.edit("**Started Check Your DP in Few Seconds**")
+    await asyncio.sleep(3)
+    await event.delete()
     while True:
 
         await coolpp()
@@ -104,9 +108,6 @@ async def main(event):
         await event.client(functions.photos.UploadProfilePhotoRequest( file))
 
         os.system("rm -rf donottouch.jpg")
-        await event.edit("**Done !!! Check Your DP**")
-        await asyncio.sleep(3)
-        await event.delete()
         await asyncio.sleep(input1_Delay)
         
 CMD_HELP.update(
