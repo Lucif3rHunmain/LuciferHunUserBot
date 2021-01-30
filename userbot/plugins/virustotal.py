@@ -17,12 +17,12 @@ async def detect(event):
         )
     reply = await event.get_reply_message()
     if not reply:
-        return await edit_delete(
-            event, "`Reply to a media file!`", 5
+        return await event.edit(
+            "`Reply to a media file!`", 5
         )
-    catevent = await edit_or_reply("`Downloading the file to check...`")
+    await event.edit("`Downloading the file to check...`")
     media = await event.client.download_media(reply)
-    catevent = await edit_or_reply("`Scanning the file for any kind of virus or malware and abnormal behaviour`")
+    await event.edit("`Scanning the file for any kind of virus or malware and abnormal behaviour`")
     scanurl = 'https://www.virustotal.com/vtapi/v2/file/scan'
     params = {'apikey': VIRUSTOTAL_API_KEY}
     files = {'file': open(media, 'rb')}
