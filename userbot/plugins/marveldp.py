@@ -118,7 +118,7 @@ async def main(event):
     await event.edit("**Starting Marvel Profile Pics... **")
     while True:
 
-        await actresspp()
+        await marvelpp()
 
         file = await event.client.upload_file("donottouch.jpg")  
 
