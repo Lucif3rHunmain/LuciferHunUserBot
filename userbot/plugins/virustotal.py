@@ -27,15 +27,16 @@ async def detect(event):
     params = {'apikey': VIRUSTOTAL_API_KEY}
     files = {'file': open(media, 'rb')}
     vresponse = requests.post(scanurl, files=files, params=params)
-    vebrose_msg = vresponse["vebrose_msg"]
+    jresponse = json.loads(vresponse)
+    vebrose_msg = jresponse["vebrose_msg"]
     vebrose_msg.text.startswith("Scan rquest successfully queued,come back later for the report")
     await event.edit("File successfully uploaded for scanning. Wait for 1 mintues to get the scan results")
     await event.edit("File Scan Initialized")
     await asyncio.sleep(10)
-    md5 = vresponse["md5"]
-    sha1 = vresponse["sha1"]
-    sha256 = vresponse["sha256"]
-    resource = vresponse["resource"]
+    md5 = jresponse["md5"]
+    sha1 = jresponse["sha1"]
+    sha256 = jresponse["sha256"]
+    resource = jresponse["resource"]
     reporturl = 'https://www.virustotal.com/vtapi/v2/file/report'
     params = {'apikey': Config.VIRUSTOTAL_API_KEY, 'resource': resource}
     response1 = requests.get(reporturl, params=params)
