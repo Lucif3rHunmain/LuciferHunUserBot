@@ -75,7 +75,7 @@ COLLECTION_STRING = [
 "iphone-girl-wallpapers", 
 "surfer-girl-wallpaper", 
 "chopper-girls-motorcycle-wallpaper", 
-"ford-mustang-wallpaper-with-girls"'
+"ford-mustang-wallpaper-with-girls",
 "scene-girl-wallpaper", 
 "wwe-divas-hd-wallpaper", 
 "felicia-day-wallpaper", 
@@ -101,7 +101,7 @@ COLLECTION_STRING = [
 "cute-baby-girl-pictures-wallpapers", 
 "gamer-girl-wallpaper", 
 "most-beautiful-women-hd-wallpaper", 
-"jordan-carver-wallpapers"
+"jordan-carver-wallpapers",
 ]
 
 
