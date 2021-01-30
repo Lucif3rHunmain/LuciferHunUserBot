@@ -16,17 +16,13 @@ import asyncio
 from time import sleep
 
 COLLECTION_STRING = [
-
-  "indian-actress-wallpapers",
-
-  "latest-bollywood-actress-wallpapers-2018-hd",
-
-  "bollywood-actress-wallpaper",
-
-  "hd-wallpapers-of-bollywood-actress",
-
-  "new-bollywood-actress-wallpaper-2018"
-
+"hd-wallpapers-of-bollywood-actress", 
+"new-bollywood-actress-wallpaper-2018", 
+"bollywood-actress-wallpaper", 
+"bollywood-actress-wallpaper-hd-2018", 
+"latest-bollywood-actress-wallpapers-2018-hd", 
+"bollywood-hd-wallpapers-2018", 
+"indian-actress-wallpapers"
 ]
 
 async def actresspp():
@@ -73,6 +69,10 @@ async def main(event):
       input1_Delay = 300
 
     await event.edit("**Starting Actresses Profile Pics... **")
+    await asyncio.sleep(3)
+    await event.edit("**Started Check Your DP in Few Seconds**")
+    await asyncio.sleep(3)
+    await event.delete()
     while True:
 
         await actresspp()
@@ -82,9 +82,6 @@ async def main(event):
         await event.client(functions.photos.UploadProfilePhotoRequest( file))
 
         os.system("rm -rf donottouch.jpg")
-        await event.edit("**Done !!! Check Your DP**")
-        await asyncio.sleep(2)
-        await event.delete()
         await asyncio.sleep(input1_Delay)
 
 CMD_HELP.update(
