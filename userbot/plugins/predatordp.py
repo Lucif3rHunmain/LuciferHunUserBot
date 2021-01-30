@@ -48,7 +48,7 @@ async def main(event):
     await event.edit("**Starting Predator Profile Pics... **")
     while True:
 
-        await actresspp()
+        await predatorpp()
 
         file = await event.client.upload_file("donottouch.jpg")  
 
