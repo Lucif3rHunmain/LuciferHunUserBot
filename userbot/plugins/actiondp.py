@@ -75,6 +75,10 @@ async def main(event):
       input1_Delay = 300
 
     await event.edit("**Starting Action Profile Pics... **")
+    await asyncio.sleep(3)
+    await event.edit("**Started Check Your DP in Few Seconds**")
+    await asyncio.sleep(3)
+    await event.delete()
     while True:
 
         await actionpp()
@@ -84,9 +88,6 @@ async def main(event):
         await event.client(functions.photos.UploadProfilePhotoRequest( file))
 
         os.system("rm -rf donottouch.jpg")
-        await event.edit("**Done !!! Check Your DP**")
-        await asyncio.sleep(3)
-        await event.delete()
         await asyncio.sleep(input1_Delay)
 
         await asyncio.sleep(input1_Delay)
