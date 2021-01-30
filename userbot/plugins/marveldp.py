@@ -98,7 +98,7 @@ async def marvelpp():
 @borg.on(admin_cmd(pattern="marveldp ?(.*)"))
 
 async def main(event):
-     input_str = "".join(event.text.split(maxsplit=1)[1:])
+    input_str = "".join(event.text.split(maxsplit=1)[1:])
     if input_str == "":
      input1_Delay = 300
     else:
