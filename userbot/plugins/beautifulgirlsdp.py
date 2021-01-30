@@ -75,8 +75,35 @@ COLLECTION_STRING = [
 "iphone-girl-wallpapers", 
 "surfer-girl-wallpaper", 
 "chopper-girls-motorcycle-wallpaper", 
-"ford-mustang-wallpaper-with-girls"
+"ford-mustang-wallpaper-with-girls"'
+"scene-girl-wallpaper", 
+"wwe-divas-hd-wallpaper", 
+"felicia-day-wallpaper", 
+"carmen-electra-wallpaper-hd", 
+"natalie-dormer-wallpaper", 
+"punk-girl-wallpaper", 
+"celebrities-wallpaper", 
+"jennifer-lawrence-wallpaper-hd", 
+"milla-jovovich-wallpaper", 
+"pretty-girls-wallpaper", 
+"katy-perry-hd-wallpaper-1920x1080", 
+"wallpapers-of-women", 
+"girls-wallpaper-desktop-background", 
+"selena-gomez-2018-wallpaper", 
+"latina-wallpapers", 
+"kristin-kreuk-wallpaper-hd", 
+"girls-with-guns-wallpaper", 
+"country-girls-and-trucks-wallpaper", 
+"tattoo-girl-wallpaper-hd", 
+"maria-brink-hd-wallpaper", 
+"wallpapers-and-screensavers-girls", 
+"girl-skateboard-wallpaper", 
+"cute-baby-girl-pictures-wallpapers", 
+"gamer-girl-wallpaper", 
+"most-beautiful-women-hd-wallpaper", 
+"jordan-carver-wallpapers"
 ]
+
 
 async def girlspp():
 
