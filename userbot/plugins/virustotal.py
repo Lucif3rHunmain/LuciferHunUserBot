@@ -1,4 +1,4 @@
-# ported to dc by @Lucif3rHun
+
 import asyncio
 import os
 import requests
@@ -7,7 +7,7 @@ from userbot.utils import edit_or_reply, edit_delete, admin_cmd
 from userbot.uniborgConfig import Config
 
 VIRUSTOTAL_API_KEY = os.environ.get("VIRUSTOTAL_API_KEY", None)
-@borg.on(admin_cmd(pattern="detect$", outgoing=True))
+@borg.on(admin_cmd(pattern="vtscan$", outgoing=True))
 async def detect(event):
     if Config.DEEP_AI is None:
         return await edit_delete(
