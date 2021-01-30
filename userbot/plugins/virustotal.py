@@ -27,8 +27,6 @@ async def detect(event):
     params = {'apikey': VIRUSTOTAL_API_KEY}
     files = {'file': open(media, 'rb')}
     response = requests.post(scanurl, files=files, params=params)
-    vresponse = json.dumps(response)
-    vresponse = json.loads(response)
     vebrose_msg = vresponse["vebrose_msg"]
     vebrose_msg.text.startswith("Scan rquest successfully queued,come back later for the report")
     await event.edit("File successfully uploaded for scanning. Wait for 1 mintues to get the scan results")
