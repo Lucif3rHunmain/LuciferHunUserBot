@@ -2,6 +2,7 @@
 import asyncio
 import os
 import requests
+import jsons
 from userbot import CMD_HELP
 from userbot.utils import edit_or_reply, edit_delete, admin_cmd
 from userbot.uniborgConfig import Config
@@ -18,13 +19,17 @@ async def detect(event):
         return await edit_delete(
             event, "`Reply to a media file!`", 5
         )
-    catevent = await edit_or_reply(event, "`Downloading the file to check...`")
+    catevent = await edit_or_reply("`Downloading the file to check...`")
     media = await event.client.download_media(reply)
-    catevent = await edit_or_reply(event, "`Scanning the file for any kind of virus or malware and abnormal behaviour`")
+    catevent = await edit_or_reply("`Scanning the file for any kind of virus or malware and abnormal behaviour`")
     url = 'https://www.virustotal.com/vtapi/v2/file/scan'
     params = {'apikey': VIRUSTOTAL_API_KEY}
     files = {'file': open(media, 'rb')}
     response = requests.post(url, files=files, params=params)
+    vresponse = json.loads(response)
+    vebrose_msg = vresponse["vebrose_msg"]
+    if vebrose_msg.text.startswith("Scan rquest successfully queued,come back later for the report")
+    catevent = await edit
     print(response.json())
     catevent = await edit_or_reply(event,f"{response.json()}")
     os.remove(media)
