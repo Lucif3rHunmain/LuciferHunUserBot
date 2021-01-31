@@ -20,6 +20,11 @@ async def _(event):
               return
           if response.text.startswith("send"):
              await event.edit("```can you kindly disable your forward privacy settings for good?```")
+          elif response.text.startswith("An error occured")
+             await conv.send_message('/generate')
+             response = conv.wait_event(events.NewMessage(incoming=True,from_users=177914997))
+             response = await response
+             await event.edit(f"{response.message.message}")
           else: 
              await event.edit(f"{response.message.message}")
 
