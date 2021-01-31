@@ -55,7 +55,7 @@ CMD_HELP.update(
     {
         "Fakemail": "__**PLUGIN NAME :** Tempmail__\
     \n\n📌** CMD ★** `.ftmail`\
-    \n**USAGE   ★  **Get yourself a Tempmail without going to web
+    \n**USAGE   ★  **Get yourself a Tempmail without going to web\
     \n\n📌** CMD ★** `.ftmaills`\
     \n**USAGE   ★  **Gets you the list of fake temp mails you generated."
 
