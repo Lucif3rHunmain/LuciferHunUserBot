@@ -42,18 +42,18 @@ async def vtscan(event):
      response_jso = json.load(response_2.text)
      verbose = response.jso['verbose_msg']
      if verbose == 'The requested resource is not among the finished, queued or pending scans':
-     url = 'https://www.virustotal.com/vtapi/v2/file/scan'
-     params = {'apikey': Config.VIRUSTOTAL_API_KEY} 
-     files = {'file': (media, open(media, 'rb'))}
-     response = requests.post(url, files=files, params=params)
-     response_json = json.load(response.text)
-     resource = response_json['resource']
-     await asyncio.sleep(20)
-     url = 'https://www.virustotal.com/vtapi/v2/file/report'
-     params = {'apikey': Config.VIRUSTOTAL_API_KEY, 'resource': resource}
-     response_2 = requests.get(url, params=params)
-     response_jso = json.load(response_2.text)
-     catevent = await edit_or_reply(event, response_jso)
+      url = 'https://www.virustotal.com/vtapi/v2/file/scan'
+      params = {'apikey': Config.VIRUSTOTAL_API_KEY} 
+      files = {'file': (media, open(media, 'rb'))}
+      response = requests.post(url, files=files, params=params)
+      response_json = json.load(response.text)
+      resource = response_json['resource']
+      await asyncio.sleep(20)
+      url = 'https://www.virustotal.com/vtapi/v2/file/report'
+      params = {'apikey': Config.VIRUSTOTAL_API_KEY, 'resource': resource}
+      response_2 = requests.get(url, params=params)
+      response_jso = json.load(response_2.text)
+      catevent = await edit_or_reply(event, response_jso)
     elif response_code == 'Response [204]'
        catevent = await edit_or_reply(event, "You have exusted you api limit for a min, try again in a minute")
     else:
