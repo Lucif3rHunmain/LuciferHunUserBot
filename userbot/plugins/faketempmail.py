@@ -14,7 +14,6 @@ async def _(event):
           try:
               await conv.send_message('/generate')
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=177914997))
-              await borg.forward_messages(chat, reply_message)
               response = await response 
           except YouBlockedUserError: 
               await event.reply("```Please unblock @fakemailbot and try again```")
