@@ -23,15 +23,11 @@ async def vtscan(event):
     catevent = await edit_or_reply(event, "`Downloading the file to check...`")
     media = await event.client.download_media(reply)
     h = hashlib.sha1()
-    # open file for reading in binary mode
-     with open(media , 'rb') as file:
-        # loop till the end of the file
-        chunk = 0
-        while chunk != b'':
-            # read only 1024 bytes at a time
-            chunk = file.read(1024)
-            h.update(chunk)
-    # return the hex representation of digest
+    with open(media , 'rb') as file:
+       chunk = 0
+      while chunk != b'':
+         chunk = file.read(1024)
+         h.update(chunk)
      return h.hexdigest()
      message = hash_file(media)
      url = 'https://www.virustotal.com/vtapi/v2/file/report'
