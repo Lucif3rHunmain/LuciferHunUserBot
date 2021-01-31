@@ -24,7 +24,7 @@ async def vtscan(event):
     media = await event.client.download_media(reply)
     url = 'https://www.virustotal.com/vtapi/v2/file/scan'
     params = {'apikey': 'Config.VIRUSTOTAL_API_KEY'}
-    files = {'file': open(media, 'rb'))}
+    files = {'file': open(media, 'rb')}
     response = requests.post(url, files=files, params=params)
     await event.edit(response.json())
 
