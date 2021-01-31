@@ -22,8 +22,7 @@ async def vtscan(event):
         )
     catevent = await edit_or_reply(event, "`Downloading the file to check...`")
     media = await event.client.download_media(reply)
-    def hash_file(event):
-     h = hashlib.sha1()
+    h = hashlib.sha1()
     # open file for reading in binary mode
      with open(media , 'rb') as file:
         # loop till the end of the file
