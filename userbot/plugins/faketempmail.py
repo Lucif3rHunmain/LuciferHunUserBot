@@ -9,10 +9,10 @@ from userbot import bot, CMD_HELP
 async def _(event):
 
     chat = "@fakemailbot"
-    sender = `/generate`
     await event.edit("```Getting you a fakemail My Master```")
     async with borg.conversation(chat) as conv:
-          try:     
+          try:
+              await conv.send_message('/addsticker')
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=177914997))
               await borg.forward_messages(chat, reply_message)
               response = await response 
