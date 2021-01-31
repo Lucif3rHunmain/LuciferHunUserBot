@@ -24,7 +24,7 @@ async def vtscan(event):
     params = {'apikey': 'Config.VIRUSTOTAL_API_KEY'}
     files = {'file': open(media, 'rb')}
     response = requests.post(url, files=files, params=params)
-    await event.edit(response.json())
+    catevent = await edit_or_reply(event, response.json())
 
 CMD_HELP.update(
         {
