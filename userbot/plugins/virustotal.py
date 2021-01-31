@@ -27,10 +27,12 @@ async def vtscan(event):
     params = {'apikey': VIRUSTOTAL_API_KEY}
     files = {'file': open(media, 'rb')}
     vresponse = requests.post(scanurl, files=files, params=params)
+    os.remove(media)
     catevent = await edit_or_reply(event, vresponse.json())
-    vebrose_msg = vresponse.json()["vebrose_msg"]
-    vebrose_msg.text.startswith("Scan rquest successfully queued, come back later for the report")
+    msg = vresponse.json()["vebrose_msg"]
+    if msg.text.startswith("Scan rquest successfully queued"):
     catevent = await edit_or_reply(event, "File successfully uploaded for scanning. Wait for 1 mintues to get the scan results")
+    await asyncio.sleep(10)
     catevent = await edit_or_reply(event, "File Scan Initialized")
     await asyncio.sleep(10)
     md5 = vresponse.json()["md5"]
@@ -42,7 +44,8 @@ async def vtscan(event):
     response1 = requests.get(reporturl, params=params)
     catevent = await edit_or_reply(event, f,"File Hash \n Md5- {md5} \n Sha1- {sha1} \n Sha256- {sha256}")
     catevent = await edit_or_reply(event, response1.json())
-    os.remove(media)
+    else:
+    catevent = await edit_or_reply(event, vresponse.json())
 CMD_HELP.update(
         {
         "VirusTotal": ".vtscan"
