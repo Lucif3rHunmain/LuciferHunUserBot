@@ -12,7 +12,7 @@ async def _(event):
     await event.edit("```Getting you a fakemail My Master```")
     async with borg.conversation(chat) as conv:
           try:
-              await conv.send_message('/addsticker')
+              await conv.send_message('/generate')
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=177914997))
               await borg.forward_messages(chat, reply_message)
               response = await response 
