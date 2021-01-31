@@ -33,7 +33,12 @@ async def vtscan(event):
     params = {'apikey': Config.VIRUSTOTAL_API_KEY, 'resource': resource}
     response_2 = requests.get(url, params=params)
     response_jso = json.loads(response_2.text)
-    catevent = await edit_or_reply(event, response_jso)
+    await edit_or_reply(
+        catevent,
+        response_jso,
+        link_preview=False,
+        parse_mode="JSON",
+    )
   
 CMD_HELP.update(
         {
