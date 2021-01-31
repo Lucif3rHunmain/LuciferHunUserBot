@@ -22,33 +22,18 @@ async def vtscan(event):
         )
     catevent = await edit_or_reply(event, "`Downloading the file to check...`")
     media = await event.client.download_media(reply)
-    h = hashlib.sha1()
-    with open(media , 'rb') as file:
-       chunk = 0
-    while chunk != b'':
-         chunk = file.read(1024)
-         h.update(chunk)
-    return h.hexdigest()
-    message = hash_file(media)
+    url = 'https://www.virustotal.com/vtapi/v2/file/scan'
+    params = {'apikey': Config.VIRUSTOTAL_API_KEY} 
+    files = {'file': (media, open(media, 'rb'))}
+    response = requests.post(url, files=files, params=params)
+    response_json = json.load(response.text)
+    resource = response_json['resource']
+    await asyncio.sleep(20)
     url = 'https://www.virustotal.com/vtapi/v2/file/report'
     params = {'apikey': Config.VIRUSTOTAL_API_KEY, 'resource': resource}
     response_2 = requests.get(url, params=params)
-    response_code = response_2
     response_jso = json.load(response_2.text)
-    verbose = response.jso['verbose_msg']
-    if verbose == 'The requested resource is not among the finished, queued or pending scans':
-      url = 'https://www.virustotal.com/vtapi/v2/file/scan'
-      params = {'apikey': Config.VIRUSTOTAL_API_KEY} 
-      files = {'file': (media, open(media, 'rb'))}
-      response = requests.post(url, files=files, params=params)
-      response_json = json.load(response.text)
-      resource = response_json['resource']
-      await asyncio.sleep(20)
-      url = 'https://www.virustotal.com/vtapi/v2/file/report'
-      params = {'apikey': Config.VIRUSTOTAL_API_KEY, 'resource': resource}
-      response_2 = requests.get(url, params=params)
-      response_jso = json.load(response_2.text)
-      catevent = await edit_or_reply(event, response_jso)
+    catevent = await edit_or_reply(event, response_jso)
   
 CMD_HELP.update(
         {
