@@ -23,9 +23,9 @@ async def vtscan(event):
     catevent = await edit_or_reply(event, "`Downloading the file to check...`")
     media = await event.client.download_media(reply)
     def hash_file(event):
-    h = hashlib.sha1()
+     h = hashlib.sha1()
     # open file for reading in binary mode
-    with open(media , 'rb') as file:
+     with open(media , 'rb') as file:
         # loop till the end of the file
         chunk = 0
         while chunk != b'':
@@ -33,15 +33,15 @@ async def vtscan(event):
             chunk = file.read(1024)
             h.update(chunk)
     # return the hex representation of digest
-    return h.hexdigest()
-    message = hash_file(media)
-    url = 'https://www.virustotal.com/vtapi/v2/file/report'
-    params = {'apikey': Config.VIRUSTOTAL_API_KEY, 'resource': resource}
-    response_2 = requests.get(url, params=params)
-    response_code = response_2
-    response_jso = json.load(response_2.text)
-    verbose = response.jso['verbose_msg']
-    if verbose == 'The requested resource is not among the finished, queued or pending scans':
+     return h.hexdigest()
+     message = hash_file(media)
+     url = 'https://www.virustotal.com/vtapi/v2/file/report'
+     params = {'apikey': Config.VIRUSTOTAL_API_KEY, 'resource': resource}
+     response_2 = requests.get(url, params=params)
+     response_code = response_2
+     response_jso = json.load(response_2.text)
+     verbose = response.jso['verbose_msg']
+     if verbose == 'The requested resource is not among the finished, queued or pending scans':
      url = 'https://www.virustotal.com/vtapi/v2/file/scan'
      params = {'apikey': Config.VIRUSTOTAL_API_KEY} 
      files = {'file': (media, open(media, 'rb'))}
