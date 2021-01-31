@@ -38,7 +38,20 @@ async def vtscan(event):
     params = {'apikey': Config.VIRUSTOTAL_API_KEY, 'resource': resource}
     response_2 = requests.get(url, params=params)
     response_jso = json.loads(response_2.text)
-    await event.edit(f"{response_jso}")
+    await event.edit("`Getting Results`")
+    with open('Scan Results.txt', 'w') as outfile:
+         json.dump(response_jso, outfile)
+    await event.edit("`Got the Results, wait sending the results`")    
+    await event.client.send_file(
+            event.chat_id,
+            "Scan Results.txt",
+            reply_to=event.id,
+            caption="Scan Results of the file you just sent",
+        )
+        
+        await asyncio.sleep(5)
+        await event.delete()
+        return os.remove('Scan Results.txt')
   
 CMD_HELP.update(
         {
