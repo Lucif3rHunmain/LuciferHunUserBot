@@ -54,7 +54,7 @@ async def vtscan(event):
       response_2 = requests.get(url, params=params)
       response_jso = json.load(response_2.text)
       catevent = await edit_or_reply(event, response_jso)
-    elif response_code == 'Response [204]'
+    elif response_code == 'Response [204]':
        catevent = await edit_or_reply(event, "You have exusted you api limit for a min, try again in a minute")
     else:
         catevent = await edit_or_reply(event, response_jso)
