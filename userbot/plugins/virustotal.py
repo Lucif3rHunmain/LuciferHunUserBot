@@ -49,9 +49,9 @@ async def vtscan(event):
             caption="Scan Results of the file you just sent",
         )
         
-        await asyncio.sleep(5)
-        await event.delete()
-        return os.remove('Scan Results.txt')
+    await asyncio.sleep(5)
+    await event.delete()
+    return os.remove('Scan Results.txt')
   
 CMD_HELP.update(
         {
