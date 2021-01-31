@@ -21,34 +21,17 @@ async def vtscan(event):
         )
     catevent = await edit_or_reply(event, "`Downloading the file to check...`")
     media = await event.client.download_media(reply)
-    
- def hash_file(filename):
-   """"This function returns the SHA-1 hash
-   of the file passed into it"""
-   # make a hash object
-   h = hashlib.sha1()
-
-   # open file for reading in binary mode
-   with open(,'rb') as file:
-
-       # loop till the end of the file
-       chunk = 0
-       while chunk != b'':
-           # read only 1024 bytes at a time
-           chunk = file.read(1024)
-           h.update(chunk)
-
-   # return the hex representation of digest
-   return h.hexdigest()
-
-message = hash_file("C:\\Users\\Tilak\\Downloads\\HOuITQC+.html")
     url = 'https://www.virustotal.com/vtapi/v2/file/scan'
-    params = {'apikey': 'Config.VIRUSTOTAL_API_KEY'}
+    params = {'apikey': Config.VIRUSTOTAL_API_KEY}
     files = {'file': open(media, 'rb')}
     response = requests.post(url, files=files, params=params)
-    result = response.json()
-    catevent = await edit_or_reply(event, result)
+    response_json = json.load(response.text)
+    resource = response_json['resource']
+    url = 'https://www.virustotal.com/vtapi/v2/file/report'
+    params = {'apikey': Config.VIRUSTOTAL_API_KEY, 'resource': resource}
+    response_2 = requests.get(url, params=params)
 
+print(response.json())
 CMD_HELP.update(
         {
         "VirusTotal": ".vtscan"
