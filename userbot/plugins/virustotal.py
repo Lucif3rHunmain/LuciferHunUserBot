@@ -25,7 +25,7 @@ async def vtscan(event):
     catevent = await edit_or_reply(event, "`Uploading the file to virustotal.com for scanning it`")
     url = 'https://www.virustotal.com/vtapi/v2/file/scan'
     params = {'apikey': Config.VIRUSTOTAL_API_KEY} 
-    files = {'file': (media, open(media, 'rb'))}
+    files = {'file': open(media, 'rb')}
     response = requests.post(url, files=files, params=params)
     response_json = json.loads(response.text)
     catevent = await edit_or_reply(event, "`Uploaded the file to virustotal.com and inistialized the scanning`")
@@ -41,7 +41,8 @@ async def vtscan(event):
     await event.edit("`Getting Results`")
     with open('Scan Results.txt', 'w') as outfile:
          json.dump(response_jso, outfile)
-    await event.edit("`Got the Results, wait sending the results`")    
+    await event.edit("`Got the Results, wait sending the results`") 
+    await event.sleep(5)   
     await event.client.send_file(
             event.chat_id,
             "Scan Results.txt",
@@ -50,7 +51,6 @@ async def vtscan(event):
         )
         
     await asyncio.sleep(5)
-    await event.delete()
     return os.remove('Scan Results.txt')
   
 CMD_HELP.update(
