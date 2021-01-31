@@ -2,6 +2,7 @@ import asyncio
 import os
 import requests
 imoprt hashlib
+import json
 from userbot import CMD_HELP
 from userbot.utils import edit_or_reply, edit_delete, admin_cmd
 from userbot.uniborgConfig import Config
@@ -21,17 +22,43 @@ async def vtscan(event):
         )
     catevent = await edit_or_reply(event, "`Downloading the file to check...`")
     media = await event.client.download_media(reply)
-    url = 'https://www.virustotal.com/vtapi/v2/file/scan'
-    params = {'apikey': Config.VIRUSTOTAL_API_KEY}
-    files = {'file': open(media, 'rb')}
-    response = requests.post(url, files=files, params=params)
-    response_json = json.load(response.text)
-    resource = response_json['resource']
+    def hash_file(event):
+    h = hashlib.sha1()
+    # open file for reading in binary mode
+    with open(media , 'rb') as file:
+        # loop till the end of the file
+        chunk = 0
+        while chunk != b'':
+            # read only 1024 bytes at a time
+            chunk = file.read(1024)
+            h.update(chunk)
+    # return the hex representation of digest
+    return h.hexdigest()
+    message = hash_file(media)
     url = 'https://www.virustotal.com/vtapi/v2/file/report'
     params = {'apikey': Config.VIRUSTOTAL_API_KEY, 'resource': resource}
     response_2 = requests.get(url, params=params)
-
-print(response.json())
+    response_code = response_2
+    response_jso = json.load(response_2.text)
+    verbose = response.jso['verbose_msg']
+    if verbose == 'The requested resource is not among the finished, queued or pending scans':
+     url = 'https://www.virustotal.com/vtapi/v2/file/scan'
+     params = {'apikey': Config.VIRUSTOTAL_API_KEY} 
+     files = {'file': (media, open(media, 'rb'))}
+     response = requests.post(url, files=files, params=params)
+     response_json = json.load(response.text)
+     resource = response_json['resource']
+     await asyncio.sleep(20)
+     url = 'https://www.virustotal.com/vtapi/v2/file/report'
+     params = {'apikey': Config.VIRUSTOTAL_API_KEY, 'resource': resource}
+     response_2 = requests.get(url, params=params)
+     response_jso = json.load(response_2.text)
+     catevent = await edit_or_reply(event, response_jso)
+    elif response_code == 'Response [204]'
+       catevent = await edit_or_reply(event, "You have exusted you api limit for a min, try again in a minute")
+    else:
+        catevent = await edit_or_reply(event, response_jso)
+    
 CMD_HELP.update(
         {
         "VirusTotal": ".vtscan"
