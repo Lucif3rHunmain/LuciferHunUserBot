@@ -1,8 +1,6 @@
-
 import asyncio
 import os
 import requests
-import json
 from userbot import CMD_HELP
 from userbot.utils import edit_or_reply, edit_delete, admin_cmd
 from userbot.uniborgConfig import Config
