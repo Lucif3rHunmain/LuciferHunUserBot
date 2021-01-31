@@ -27,18 +27,14 @@ async def vtscan(event):
     files = {'file': (media, open(media, 'rb'))}
     response = requests.post(url, files=files, params=params)
     response_json = json.loads(response.text)
+    await event.edit(f"{response_json}")
     resource = response_json['resource']
     await asyncio.sleep(20)
     url = 'https://www.virustotal.com/vtapi/v2/file/report'
     params = {'apikey': Config.VIRUSTOTAL_API_KEY, 'resource': resource}
     response_2 = requests.get(url, params=params)
     response_jso = json.loads(response_2.text)
-    await edit_or_reply(
-        catevent,
-        response_jso,
-        link_preview=False,
-        parse_mode="JSON",
-    )
+    await event.edit(f"{response_jso}")
   
 CMD_HELP.update(
         {
