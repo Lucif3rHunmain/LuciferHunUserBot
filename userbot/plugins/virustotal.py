@@ -42,7 +42,8 @@ async def vtscan(event):
     with open('Scan Results.txt', 'w') as outfile:
          json.dump(response_jso, outfile)
     await event.edit("`Got the Results, wait sending the results`") 
-    await event.sleep(5)   
+    await asyncio.sleep(5)
+    await event.delete()   
     await event.client.send_file(
             event.chat_id,
             "Scan Results.txt",
