@@ -39,20 +39,19 @@ async def vtscan(event):
     response_2 = requests.get(url, params=params)
     await event.edit("`Getting Results`")
     response_jso = json.loads(response_2.text)
-    with open('Scan Results.txt', 'w') as outfile:
-         json.dump(response_jso, outfile)
     await event.edit("`Got the Results, wait sending the results`") 
     await asyncio.sleep(5)
-    await event.delete()   
-    await event.client.send_file(
-            event.chat_id,
-            "Scan Results.txt",
-            reply_to=event.id,
-            caption="Scan Results of the file you just sent",
-        )
-        
-    await asyncio.sleep(5)
-    return os.remove('Scan Results.txt')
+    a = response_jso
+    b = a.replace('}, "', '\n')
+    c = b.replace('{"scans": {"', '')
+    d = c.replace(' {"detected": ', '')
+    e = re.sub('"version": ".*", ', '', d)
+    f = re.sub('"result": .*,', '', e)
+    g = re.sub(',  "update": ".*', '', f)
+    h = re.sub('scan_id": .*, "', '', g)
+    i = re.sub('md5": ".*"}', '', h)
+    j = i.replace('":', ":")
+    await event.edit(f,"{j}")
   
 CMD_HELP.update(
         {
