@@ -41,7 +41,7 @@ async def vtscan(event):
     await event.edit("`Getting Results`")
     await event.edit("`Got the Results, wait sending the results`") 
     await asyncio.sleep(5)
-    a = json.loads(response.text)
+    a = response.text
     b = a.replace('}, "', '\n')
     c = b.replace('{"scans": {"', '')
     d = c.replace(' {"detected": ', '')
@@ -51,7 +51,7 @@ async def vtscan(event):
     h = re.sub('scan_id": .*, "', '', g)
     i = re.sub('md5": ".*"}', '', h)
     j = i.replace('":', ":")
-    await event.edit(f,"{j}")
+    await event.edit(f"{j}")
   
 CMD_HELP.update(
         {
