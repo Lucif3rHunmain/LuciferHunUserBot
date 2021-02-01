@@ -37,8 +37,8 @@ async def vtscan(event):
     url = 'https://www.virustotal.com/vtapi/v2/file/report'
     params = {'apikey': Config.VIRUSTOTAL_API_KEY, 'resource': resource}
     response_2 = requests.get(url, params=params)
-    response_jso = json.loads(response_2.text)
     await event.edit("`Getting Results`")
+    response_jso = json.loads(response_2.text)
     with open('Scan Results.txt', 'w') as outfile:
          json.dump(response_jso, outfile)
     await event.edit("`Got the Results, wait sending the results`") 
