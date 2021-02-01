@@ -39,10 +39,9 @@ async def vtscan(event):
     params = {'apikey': Config.VIRUSTOTAL_API_KEY, 'resource': resource}
     response_2 = requests.get(url, params=params)
     await event.edit("`Getting Results`")
-    response_jso = json.loads(response_2.text)
     await event.edit("`Got the Results, wait sending the results`") 
     await asyncio.sleep(5)
-    a = response_jso
+    a = json.loads(response.text)
     b = a.replace('}, "', '\n')
     c = b.replace('{"scans": {"', '')
     d = c.replace(' {"detected": ', '')
