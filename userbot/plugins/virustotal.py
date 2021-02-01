@@ -41,7 +41,7 @@ async def vtscan(event):
     await event.edit("`Getting Results`")
     await event.edit("`Got the Results, wait sending the results`") 
     await asyncio.sleep(5)
-    a = response.text
+    a = response_2.text
     b = a.replace('}, "', '\n')
     c = b.replace('{"scans": {"', '')
     d = c.replace(' {"detected": ', '')
