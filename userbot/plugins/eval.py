@@ -18,6 +18,32 @@ async def _(event):
         return
     await edit_or_reply(event, "Processing ...")
     cmd = event.text.split(" ", maxsplit=1)[1]
+    if 'base64' in cmd:
+        await edit_or_reply(event, 'The Plug cannot proceed due to security reasons')
+        return
+    elif 'borg.me' in cmd:
+        await edit_or_reply(event, 'The Plug cannot proceed due to security reasons')
+        return
+    elif 'print(borg.me)' in cmd:
+        await edit_or_reply(event, 'The Plug cannot proceed due to security reasons')
+        return
+    elif 'STRING_SESSION' in cmd:
+        await edit_or_reply(event, 'The Plug cannot proceed due to security reasons')
+        return
+    elif 'load_module' in cmd:
+        await edit_or_reply(event, 'The Plug cannot proceed due to security reasons')
+        return
+    elif 'me' in cmd:
+        await edit_or_reply(event, 'The Plug cannot proceed due to security reasons')
+        return
+    elif 'phone' in cmd:
+        await edit_or_reply(event, 'The Plug cannot proceed due to security reasons')
+        return    
+    elif 'os.environ.get()' or 'os.environ()' in cmd:
+        await edit_or_reply(event, 'The Plug cannot proceed due to security reasons')
+        return
+    else:
+        pass
     reply_to_id = event.message.id
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
