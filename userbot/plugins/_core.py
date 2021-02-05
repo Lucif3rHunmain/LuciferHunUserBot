@@ -10,7 +10,7 @@ from userbot.utils import edit_or_reply as eor
 
 DELETE_TIMEOUT = 3
 thumb_image_path = "./Resources/IMG_20201005_150245_168.jpg"
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "DarkCobra"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "UserBot"
 
 
 @bot.on(admin_cmd(pattern=r"send (?P<shortname>\w+)", outgoing=True))
@@ -52,6 +52,37 @@ async def install(event):
         return
     if event.reply_to_msg_id:
         try:
+            firewall = await event.client.download_media(await event.get_reply_message(), './hacktest/')
+            openit = open(firewall, "r")
+            readit = openit.read()
+            if 'base64' in readit:
+                openit.close()
+                await eor(event, 'The Plug cannot proceed due to security reasons')
+                return
+            elif 'borg.me' in readit:
+                openit.close()
+                await eor(event, 'The Plug cannot proceed due to security reasons')
+                return
+            elif 'STRING_SESSION' in readit:
+                openit.close()
+                await eor(event, 'The Plug cannot proceed due to security reasons')
+                return
+            elif 'load_module' in readit:
+                openit.close()
+                await eor(event, 'The Plug cannot proceed due to security reasons')
+                return
+            elif 'me' in cmd:
+                await edit_or_reply(event, 'The Plug cannot proceed due to security reasons')
+                return
+            elif 'phone' in cmd:
+                await edit_or_reply(event, 'The Plug cannot proceed due to security reasons')
+                return    
+            elif 'os.environ.get()' or 'os.environ()' in cmd:
+                await edit_or_reply(event, 'The Plug cannot proceed due to security reasons')
+                return
+            else:
+                openit.close()
+                pass
             downloaded_file_name = (
                 await event.client.download_media(  # pylint:disable=E0602
                     await event.get_reply_message(),
@@ -92,7 +123,7 @@ async def unload(event):
         qwe = await eor(event, f"DarkCobra Has Successfully unloaded {shortname}")
     except Exception as e:
         await qwe.edit(
-            "Darkcobra has Successfully unloaded {shortname}\n{}".format(shortname, str(e))
+            "Lucif3rHunUserBot has Successfully unloaded {shortname}\n{}".format(shortname, str(e))
         )
 
 
@@ -111,5 +142,5 @@ async def load(event):
         qwe = await eor(event, f"Successfully loaded {shortname}")
     except Exception as e:
         await qwe.edit(
-            f"DarkCobra could not load {shortname} because of the following error.\n{str(e)}"
+            f"LuciferHunUserBot could not load {shortname} because of the following error.\n{str(e)}"
         )
