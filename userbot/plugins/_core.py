@@ -9,7 +9,7 @@ from userbot.utils import admin_cmd, load_module, remove_plugin, sudo_cmd
 from userbot.utils import edit_or_reply as eor
 
 DELETE_TIMEOUT = 3
-thumb_image_path = "./Resources/IMG_20201005_150245_168.jpg"
+thumb_image_path = "./Resources/IMG_20201228_222514_660.jpg"
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "UserBot"
 
 
