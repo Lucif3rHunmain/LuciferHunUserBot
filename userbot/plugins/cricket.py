@@ -20,7 +20,7 @@ async def _(event):
      if input_cmd == 'score' or input_Time == 'Score':
       if event.fwd_from:
         return
-          chat = "@cricbuzz_bot"
+        chat = "@cricbuzz_bot"
        reply_to_id = event.message
        lucievent = await edit_or_reply(event, "Gathering info...")
        async with event.client.conversation(chat) as conv:
@@ -46,7 +46,7 @@ async def _(event):
      elif input_cmd == 'recent' or input_cmd == 'Recent':
       if event.fwd_from:
         return
-          chat = "@cricbuzz_bot"
+        chat = "@cricbuzz_bot"
        reply_to_id = event.message
        lucievent = await edit_or_reply(event, "Gathering info...")
        async with event.client.conversation(chat) as conv:
@@ -73,7 +73,7 @@ async def _(event):
      elif input_cmd == 'upcoming' or input_cmd == 'Upcoming':
        if event.fwd_from:
         return
-          chat = "@cricbuzz_bot"
+        chat = "@cricbuzz_bot"
        reply_to_id = event.message
        lucivent = await edit_or_reply(event, "Gathering info...")
        async with event.client.conversation(chat) as conv:
