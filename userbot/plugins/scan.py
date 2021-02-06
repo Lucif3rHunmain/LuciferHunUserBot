@@ -13,19 +13,18 @@ async def _(event):
        await event.edit("Reply to any user message.")
        return
     reply_message = await event.get_reply_message() 
-    chat = "Sangmatainfo_bot"
+    chat = "tgscanrobot"
     sender = reply_message.sender.id
     if reply_message.sender.bot:
        await event.edit("Reply to actual users message.")
        return
     await event.edit("Checking...")
     async with event.client.conversation(chat) as conv:
-          try:     
-              #await conv.send_message("/search_id {}".format(sender))
+          try:
               response1 = conv.wait_event(events.NewMessage(incoming=True,from_users=1557162396))
               response2 = conv.wait_event(events.NewMessage(incoming=True,from_users=1557162396))
               response3 = conv.wait_event(events.NewMessage(incoming=True,from_users=1557162396))
-              await conv.send_message("/search_id {}".format(sender))
+              await conv.send_message('{}'.format(sender))
               response1 = await response1 
               response2 = await response2 
               response3 = await response3 
@@ -34,7 +33,6 @@ async def _(event):
               return
               await event.delete()
               await event.client.send_message(event.chat_id, response2.message)
-             
               await event.client.send_message(event.chat_id, response3.message)
 
 CMD_HELP.update(
