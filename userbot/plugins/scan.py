@@ -1,7 +1,3 @@
-# -0,0 +1,96 @@
-# Made For DARK COBRA and TELEBOT...
-# Made by team cobra with @xditya
-# Retrieves the name history and the username history of the replied user..
 import datetime
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
@@ -36,10 +32,10 @@ async def _(event):
           except YouBlockedUserError: 
               await event.reply("Please unblock ( @tgscanrobot ) ")
               return
-             await event.delete()
-             await event.client.send_message(event.chat_id, response2.message)
+              await event.delete()
+              await event.client.send_message(event.chat_id, response2.message)
              
-             await event.client.send_message(event.chat_id, response3.message)
+              await event.client.send_message(event.chat_id, response3.message)
 
 CMD_HELP.update(
     {
