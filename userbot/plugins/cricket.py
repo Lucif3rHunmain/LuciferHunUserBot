@@ -22,7 +22,7 @@ async def _(event):
         return
         chat = "@cricbuzz_bot"
         reply_to_id = event.message
-       lucievent = await edit_or_reply(event, "Gathering info...")
+        lucievent = await edit_or_reply(event, "Gathering info...")
         async with event.client.conversation(chat) as conv:
          try:
             msg_start = await conv.send_message("/start")
