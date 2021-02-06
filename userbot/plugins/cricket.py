@@ -11,7 +11,7 @@ from userbot import CMD_HELP
 @borg.on(admin_cmd(pattern=r"cricket (.*)"))
 async def _(event):
     input_str = "".join(event.text.split(maxsplit=1)[1:])
-    if input_str == "":
+    if input_str == " ":
      await event.edit("Please give a correct command. Type `.help cricket` to know more")
      await asyncio.sleep(5)
      await event.delete
