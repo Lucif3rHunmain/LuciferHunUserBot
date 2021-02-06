@@ -91,10 +91,10 @@ async def _(event):
             conv.chat_id, [msg_start.id, msg.id, response.id, respond.id]
         )
      else:
-     chat = "@cricbuzz_bot"
-     reply_to_id = event.message
-     lucievent = await edit_or_reply(event, "Collecting information...")
-     async with event.client.conversation(chat) as conv:
+      chat = "@cricbuzz_bot"
+      reply_to_id = event.message
+      lucievent = await edit_or_reply(event, "Collecting information...")
+      async with event.client.conversation(chat) as conv:
         try:
             msg_start = await conv.send_message(f"{input_cmd}")
             respond = await conv.get_response()
