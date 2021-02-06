@@ -8,7 +8,7 @@ from userbot.utils import admin_cmd, edit_or_reply
 from userbot import CMD_HELP
 
 
-@borg.on(admin_cmd(pattern=r"cricket (.*)"))
+@borg.on(admin_cmd(pattern=r"cric (.*)"))
 async def _(event):
     input_str = "".join(event.text.split(maxsplit=1)[1:])
     if input_str == " ":
@@ -119,7 +119,7 @@ async def _(event):
 CMD_HELP.update(
     {
         "cricket": "**Plugin :** cricket\
-      \n\n**  • Syntax : **.cricket <score> \
+      \n\n**  • Syntax : **.cric <score> \
       \n**  • Function : **__To see score of ongoing matches.__\
       \n\n**  • Syntax : **.cric <recent>\
       \n**  • Function : **__Recent Match Result.__\
