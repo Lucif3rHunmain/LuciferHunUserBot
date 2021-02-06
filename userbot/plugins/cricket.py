@@ -25,9 +25,7 @@ async def _(event):
         lucievent = await edit_or_reply(event, "Gathering info...")
         async with event.client.conversation(chat) as conv:
          try:
-            msg_start = await conv.send_message("/start")
-            response = await conv.get_response()
-            msg = await conv.send_message("/score")
+            msg_start = await conv.send_message(" /score")
             respond = await conv.get_response()
             await event.client.send_read_acknowledge(conv.chat_id)
          except YouBlockedUserError:
@@ -51,9 +49,7 @@ async def _(event):
         lucievent = await edit_or_reply(event, "Gathering info...")
         async with event.client.conversation(chat) as conv:
          try:
-            msg_start = await conv.send_message("/start")
-            response = await conv.get_response()
-            msg = await conv.send_message("/recent")
+            msg_start = await conv.send_message("/recent")
             respond = await conv.get_response()
             await event.client.send_read_acknowledge(conv.chat_id)
          except YouBlockedUserError:
@@ -78,9 +74,7 @@ async def _(event):
         lucivent = await edit_or_reply(event, "Gathering info...")
         async with event.client.conversation(chat) as conv:
          try:
-            msg_start = await conv.send_message("/start")
-            response = await conv.get_response()
-            msg = await conv.send_message("/upcoming")
+            msg_start = await conv.send_message("/upcoming")
             respond = await conv.get_response()
             await event.client.send_read_acknowledge(conv.chat_id)
          except YouBlockedUserError:
@@ -105,9 +99,7 @@ async def _(event):
      lucievent = await edit_or_reply(event, "Collecting information...")
      async with event.client.conversation(chat) as conv:
         try:
-            msg_start = await conv.send_message("/start")
-            response = await conv.get_response()
-            msg = await conv.send_message(f"{details}")
+            msg_start = await conv.send_message(f"{details}")
             respond = await conv.get_response()
             await event.client.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
