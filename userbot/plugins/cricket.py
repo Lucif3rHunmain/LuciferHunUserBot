@@ -25,7 +25,7 @@ async def _(event):
         lucievent = await edit_or_reply(event, "Gathering info...")
         async with event.client.conversation(chat) as conv:
          try:
-            msg_start = await conv.send_message(" /score")
+            msg_start = await conv.send_message('/score')
             respond = await conv.get_response()
             await event.client.send_read_acknowledge(conv.chat_id)
          except YouBlockedUserError:
@@ -49,7 +49,7 @@ async def _(event):
         lucievent = await edit_or_reply(event, "Gathering info...")
         async with event.client.conversation(chat) as conv:
          try:
-            msg_start = await conv.send_message("/recent")
+            msg_start = await conv.send_message('/recent')
             respond = await conv.get_response()
             await event.client.send_read_acknowledge(conv.chat_id)
          except YouBlockedUserError:
@@ -74,7 +74,7 @@ async def _(event):
         lucivent = await edit_or_reply(event, "Gathering info...")
         async with event.client.conversation(chat) as conv:
          try:
-            msg_start = await conv.send_message("/upcoming")
+            msg_start = await conv.send_message('/upcoming')
             respond = await conv.get_response()
             await event.client.send_read_acknowledge(conv.chat_id)
          except YouBlockedUserError:
@@ -91,15 +91,12 @@ async def _(event):
             conv.chat_id, [msg_start.id, msg.id, response.id, respond.id]
         )
      else:
-      if event.fwd_from:
-        return
-     details = event.pattern_match.group(1)
      chat = "@cricbuzz_bot"
      reply_to_id = event.message
      lucievent = await edit_or_reply(event, "Collecting information...")
      async with event.client.conversation(chat) as conv:
         try:
-            msg_start = await conv.send_message(f"{details}")
+            msg_start = await conv.send_message(f"{input_cmd}")
             respond = await conv.get_response()
             await event.client.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
