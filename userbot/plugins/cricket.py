@@ -21,9 +21,9 @@ async def _(event):
       if event.fwd_from:
         return
         chat = "@cricbuzz_bot"
-       reply_to_id = event.message
+        reply_to_id = event.message
        lucievent = await edit_or_reply(event, "Gathering info...")
-       async with event.client.conversation(chat) as conv:
+        async with event.client.conversation(chat) as conv:
          try:
             msg_start = await conv.send_message("/start")
             response = await conv.get_response()
@@ -47,9 +47,9 @@ async def _(event):
       if event.fwd_from:
         return
         chat = "@cricbuzz_bot"
-       reply_to_id = event.message
-       lucievent = await edit_or_reply(event, "Gathering info...")
-       async with event.client.conversation(chat) as conv:
+        reply_to_id = event.message
+        lucievent = await edit_or_reply(event, "Gathering info...")
+        async with event.client.conversation(chat) as conv:
          try:
             msg_start = await conv.send_message("/start")
             response = await conv.get_response()
@@ -74,9 +74,9 @@ async def _(event):
        if event.fwd_from:
         return
         chat = "@cricbuzz_bot"
-       reply_to_id = event.message
-       lucivent = await edit_or_reply(event, "Gathering info...")
-       async with event.client.conversation(chat) as conv:
+        reply_to_id = event.message
+        lucivent = await edit_or_reply(event, "Gathering info...")
+        async with event.client.conversation(chat) as conv:
          try:
             msg_start = await conv.send_message("/start")
             response = await conv.get_response()
