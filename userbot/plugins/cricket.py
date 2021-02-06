@@ -16,8 +16,8 @@ async def _(event):
      await asyncio.sleep(5)
      await event.delete
     else:
-     input_cmd = int(input_str.split(" ", 2)[0])
-     if input_cmd == 'score' or input_Time == 'Score':
+     input_cmd = str(input_str.split(" ", 2)[0])
+     if input_cmd == 'score' or input_cmd == 'Score':
       if event.fwd_from:
         return
         chat = "@cricbuzz_bot"
