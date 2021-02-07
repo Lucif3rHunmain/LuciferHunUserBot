@@ -5,7 +5,7 @@ from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from userbot.utils import admin_cmd
 from userbot import bot, CMD_HELP
 
-@borg.on(admin_cmd(pattern="scen ?(.*)"))
+@borg.on(admin_cmd(pattern="scan ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return 
@@ -37,7 +37,7 @@ async def _(event):
 CMD_HELP.update(
     {
         "ScanGroup": "__**PLUGIN NAME :** ScanGroup__\
-    \n\nðŸ“Œ** CMD â˜…** `.sg`\
+    \n\nðŸ“Œ** CMD â˜…** `.scan`\
     \n**USAGE   â˜…  **Retrieves the Number and Names of the Groups the User Joined"
     }
 )
