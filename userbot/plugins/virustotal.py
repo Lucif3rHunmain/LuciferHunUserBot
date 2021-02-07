@@ -2,7 +2,6 @@ import asyncio
 import os
 import re
 import requests
-import hashlib
 import json
 from userbot import CMD_HELP
 from userbot.utils import edit_or_reply, edit_delete, admin_cmd
@@ -21,19 +20,19 @@ async def vtscan(event):
         return await edit_delete(
             event, "`Reply to any media file !`", 5
         )
-    catevent = await edit_or_reply(event, "`Downloading the file to check...`")
+    lucievent = await edit_or_reply(event, "`Downloading the file to check...`")
     media = await event.client.download_media(reply)
-    catevent = await edit_or_reply(event, "`Uploading the file to virustotal.com for scanning it`")
+    lucievent = await edit_or_reply(event, "`Uploading the file to virustotal.com for scanning it`")
     url = 'https://www.virustotal.com/vtapi/v2/file/scan'
     params = {'apikey': Config.VIRUSTOTAL_API_KEY} 
     files = {'file': open(media, 'rb')}
     response = requests.post(url, files=files, params=params)
     response_json = json.loads(response.text)
-    catevent = await edit_or_reply(event, "`Uploaded the file to virustotal.com and inistialized the scanning`")
+    lucievent = await edit_or_reply(event, "`Uploaded the file to virustotal.com and inistialized the scanning`")
     await event.edit(f"{response_json}")
     await asyncio.sleep(5)
     resource = response_json['resource']
-    catevent = await edit_or_reply(event, "`Waiting for the scan to complete. Hang on a while!!`")
+    lucievent = await edit_or_reply(event, "`Waiting for the scan to complete. Hang on a while!!`")
     await asyncio.sleep(60)
     url = 'https://www.virustotal.com/vtapi/v2/file/report'
     params = {'apikey': Config.VIRUSTOTAL_API_KEY, 'resource': resource}
@@ -51,7 +50,13 @@ async def vtscan(event):
     h = re.sub('scan_id": .*, "', '', g)
     i = re.sub('md5": ".*"}', '', h)
     j = i.replace('":', ":")
-    await event.edit(f"{j}")
+    xx = j.split()
+    for z in xx:
+        aa = z.split(':')
+        if aa[1] != 'false':
+            await event.edit('⚠️ ' + aa[0] + ' => Virus Detected \n')
+        else:
+            await event.edit('✅ ' + aa[0] + ' => Safe \n')
   
 CMD_HELP.update(
         {
