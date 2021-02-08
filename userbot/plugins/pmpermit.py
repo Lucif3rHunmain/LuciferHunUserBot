@@ -23,6 +23,11 @@ PREV_REPLY_MESSAGE = {}
 
 PM_ON_OFF = Config.PM_DATA
 
+NO_OF_PMS = os.environ.get("NO_OF_PMS", None)
+if NO_OF_PMS is None:
+NO_OF_PM = 5
+else:
+NO_OF_PM = NO_OF_PMS
 
 DEFAULTUSER = (
                 str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
@@ -30,7 +35,7 @@ DEFAULTUSER = (
 CUSTOM_MIDDLE_PMP = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "**YOU HAVE TRESPASSED TO MY MASTERS INBOX** \n THIS IS ILLEGAL AND REGARDED AS A CRIME" 
 
 USER_BOT_WARN_ZERO = (f"`You were spamming my sweet master's inbox, henceforth your retarded lame ass has been blocked by my {DEFAULTUSER}'s userbot⭕️.`\n**Now GTFO, My Master is busy**")
-USER_BOT_WARN_ONE = (f"`My master is currently not at Homs. Dont Spam My Master {DEFAULTUSER}'s Inbox this is your last warning. After which you will be reported and blocked. \n Have patience till my master comes online.`")
+USER_BOT_WARN_ONE = (f"`My master is currently not at Home. Dont Spam My Master {DEFAULTUSER}'s Inbox this is your last warning. After which you will be reported and blocked. \n Have patience till my master comes online.`")
 USER_BOT_NO_WARN = ("`Hello, This Is Lucif3rHun's Personal Antispam Userbot Service⚠️.You have found your way here to my sweet master's ,`"
                     f"{DEFAULTUSER}'s inbox, Dont spam else you will be reported and blocked. He is little busy right now. So please follow the below guidelines.\n"
                     f"\n**{CUSTOM_MIDDLE_PMP}**\n\n")
@@ -175,9 +180,7 @@ async def on_new_private_message(event):
 async def do_pm_permit_action(chat_id, event):
     if chat_id not in PM_WARNS:
         PM_WARNS.update({chat_id: 0})
-    if PM_WARNS[chat_id] == 2:
-        r = await event.reply(USER_BOT_WARN_ONE)
-    if PM_WARNS[chat_id] == 3:
+    if PM_WARNS[chat_id] == NO_OF_PM:
         r = await event.reply(USER_BOT_WARN_ZERO)
         await asyncio.sleep(1)
         await event.client(functions.contacts.BlockRequest(chat_id))
