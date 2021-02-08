@@ -15,6 +15,8 @@ async def _(event):
               await conv.send_message('/generate')
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=177914997))
               response = await response
+              a = response.replace('Your new fake mail id is ' , '')
+              b = a.replace(' send /id to see the full list.' , '')
           except YouBlockedUserError: 
               await event.reply("```Please unblock @fakemailbot and try again```")
               return
@@ -24,16 +26,11 @@ async def _(event):
              await conv.send_message('/generate')
              response = conv.wait_event(events.NewMessage(incoming=True,from_users=177914997))
              response = await response
-          
-async def find_between(s, first, last):
-   try:
-     start = s.index(first) + len(first)
-     end = s.index(last, start)
-     return s[start:end]
-   except ValueError:
-     return ""
-   mailid = find_between(response, 'Your new fake mail id is', '@hi2.in')
-   await event.edit(f"Your new fake mail id is{mailid}.")
+             a = response.replace('Your new fake mail id is ' , '')
+             b = a.replace(' send /id to see the full list.' , '')
+             await event.edit(f"Your new fake mail id is '{b}'.")
+          else:
+             await event.edit(f"Your new fake mail id is '{b}'.")
 
 @borg.on(admin_cmd("ftmaills ?(.*)"))
 async def _(event):
