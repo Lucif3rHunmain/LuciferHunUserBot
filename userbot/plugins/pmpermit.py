@@ -25,9 +25,9 @@ PM_ON_OFF = Config.PM_DATA
 
 NO_OF_PMS = os.environ.get("NO_OF_PMS", None)
 if NO_OF_PMS is None:
-NO_OF_PM = 5
+ NO_OF_PM = 5
 else:
-NO_OF_PM = NO_OF_PMS
+ NO_OF_PM = NO_OF_PMS
 
 DEFAULTUSER = (
                 str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
