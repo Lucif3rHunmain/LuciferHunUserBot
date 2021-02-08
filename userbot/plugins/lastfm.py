@@ -16,7 +16,7 @@ from telethon.errors.rpcerrorlist import FloodWaitError
 from telethon.tl.functions.account import UpdateProfileRequest
 from telethon.tl.functions.users import GetFullUserRequest
 
-from userbot import BOTLOG, BOTLOG_CHATID, DEFAULT_BIO
+from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
 
 DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
 if DEFAULT_BIO is None:
