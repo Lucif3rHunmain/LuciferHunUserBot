@@ -17,7 +17,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 
 from userbot import BOTLOG, BOTLOG_CHATID, DEFAULT_BIO
 
-BIO_PREFIX = Config.BIO_PREFIX
+BIO_PREFIX = Config.DEFAULT_BIO
 LASTFM_API = Config.LASTFM_API
 LASTFM_SECRET = Config.LASTFM_SECRET
 LASTFM_USERNAME = Config.LASTFM_USERNAME
