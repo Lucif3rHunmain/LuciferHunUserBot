@@ -8,6 +8,7 @@ import os
 from re import sub
 from sys import setrecursionlimit
 from urllib import parse
+from userbot.utils import admin_cmd
 from userbot.uniborgConfig import Config
 from pylast import LastFMNetwork, User, WSError, md5
 from telethon.errors import AboutTooLongError
