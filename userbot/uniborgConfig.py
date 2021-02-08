@@ -136,6 +136,11 @@ if ENV:
         DEEP_AI = os.environ.get("DEEP_AI", None)
         #for tag logs
         VIRUSTOTAL_API_KEY = os.environ.get("VIRUSTOTAL_API_KEY", None)
+        DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
+        LASTFM_API = os.environ.get("LASTFM_API", None)
+        LASTFM_SECRET = os.environ.get("LASTFM_SECRET", None)
+        LASTFM_PASSWORD = os.environ.get("LASTFM_PASSWORD", None)
+        LASTFM_USERNAME = os.environ.get("LASTFM_USERNAME", None)
         TAG_LOG = os.environ.get("TAG_LOG", None)
        
 else:
