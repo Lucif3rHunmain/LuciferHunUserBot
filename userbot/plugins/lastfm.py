@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 
 from asyncio import sleep
-from os import environ
+import os
 from re import sub
 from sys import setrecursionlimit
 from urllib import parse
