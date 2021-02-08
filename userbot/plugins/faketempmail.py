@@ -32,7 +32,7 @@ async def find_between(s, first, last):
      return s[start:end]
    except ValueError:
      return ""
-   mailid = find_between(response, 'Your new fake mail id is', '@hi.in')
+   mailid = find_between(response, 'Your new fake mail id is', '@hi2.in')
    await event.edit(f"Your new fake mail id is{mailid}.")
 
 @borg.on(admin_cmd("ftmaills ?(.*)"))
