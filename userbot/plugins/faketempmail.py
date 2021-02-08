@@ -25,7 +25,7 @@ async def _(event):
              response = conv.wait_event(events.NewMessage(incoming=True,from_users=177914997))
              response = await response
 
-def find_between(s, first, last):
+async def find_between(s, first, last):
    try:
      start = s.index(first) + len(first)
      end = s.index(last, start)
