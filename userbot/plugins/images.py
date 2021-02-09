@@ -8,6 +8,7 @@ import os
 import shutil
 from re import findall
 from userbot.utils import admin_cmd
+from userbot CMD_HELP
 
 @borg.on(admin_cmd(pattern=r"img(?: |$)(\d*)? ?(.*)"))
 async def img_sampler(event):
