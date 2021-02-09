@@ -4,7 +4,7 @@ from sys import argv
 from userbot.uniborgConfig import Config
 import telethon.utils
 from telethon import TelegramClient
-
+from var import Var
 from userbot import bot
 from userbot.utils import load_module, start_assistant
 from userbot.uniborgConfig import Config
