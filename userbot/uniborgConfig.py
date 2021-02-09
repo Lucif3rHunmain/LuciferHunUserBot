@@ -76,6 +76,9 @@ if ENV:
         PRIVATE_GROUP_BOT_API_ID = os.environ.get("PRIVATE_GROUP_BOT_API_ID", None)
         if PRIVATE_GROUP_BOT_API_ID:
             PRIVATE_GROUP_BOT_API_ID = int(PRIVATE_GROUP_BOT_API_ID)
+        PRIVATE_GROUP_ID = os.environ.get("PRIVATE_GROUP_ID", None)
+        if PRIVATE_GROUP_ID:
+            PRIVATE_GROUP_ID = int(PRIVATE_GROUP_ID)
         # send .get_id in your private channel to forward all your Private messages
         PM_LOGGR_BOT_API_ID = os.environ.get("PM_LOGGR_BOT_API_ID", None)
         if PM_LOGGR_BOT_API_ID:
