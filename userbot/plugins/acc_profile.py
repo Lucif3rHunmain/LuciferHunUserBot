@@ -39,8 +39,12 @@ async def _(event):
             about=bio
         ))
         await event.edit("Succesfully changed my profile bio")
+        await asyncio.sleep(2)
+        await event.delete()
     except Exception as e:  # pylint:disable=C0103,W0703
         await event.edit(str(e))
+        await asyncio.sleep(3)
+        await event.delete()
 
 
 @borg.on(admin_cmd(pattern="pname ((.|\n)*)"))
@@ -59,8 +63,12 @@ async def _(event):
             last_name=last_name
         ))
         await event.edit("My name was changed successfully")
+        await asyncio.sleep(2)
+        await event.delete()
     except Exception as e:  
         await event.edit(str(e))
+        await asyncio.sleep(3)
+        await event.delete()
 
 
 @borg.on(admin_cmd(pattern="ppic"))
@@ -89,8 +97,12 @@ async def _(event):
                 ))
             except Exception as e:  # pylint:disable=C0103,W0703
                 await event.edit(str(e))
+                await asyncio.sleep(3)
+                await event.delete()
             else:
                 await event.edit("My profile picture was succesfully changed")
+                await asyncio.sleep(2)
+                await event.delete()
     try:
         os.remove(photo)
     except Exception as e:  # pylint:disable=C0103,W0703
@@ -105,8 +117,12 @@ async def update_username(username):
     try:
         await username.client(UpdateUsernameRequest(newusername))
         await username.edit(USERNAME_SUCCESS)
+        await asyncio.sleep(2)
+        await event.delete()
     except UsernameOccupiedError:
         await username.edit(USERNAME_TAKEN)
+        await asyncio.sleep(2)
+        await event.delete()
 
 
 
@@ -136,6 +152,8 @@ async def remove_profilepic(delpfp):
     await delpfp.client(DeletePhotosRequest(id=input_photos))
     await delpfp.edit(
         f"`Successfully deleted {len(input_photos)} profile picture(s).`")
+    await asyncio.sleep(2)
+    await delpfp.delete()
 
 @borg.on(admin_cmd(pattern="myusernames$"))
 @borg.on(sudo_cmd(pattern=r"myusernames$", allow_sudo=True))
@@ -147,6 +165,8 @@ async def _(event):
     for channel_obj in result.chats:
         output_str += f"- {channel_obj.title} @{channel_obj.username} \n"
     await event.edit(output_str)
+    await asyncio.sleep(3)
+    await event.delete()
     
 CMD_HELP.update({
     "acc_profile":
