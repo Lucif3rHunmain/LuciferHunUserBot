@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 from sys import argv
-from var import Var
+from userbot.uniborgConfig import Config
 import telethon.utils
 from telethon import TelegramClient
 
@@ -19,8 +19,8 @@ async def add_bot(bot_token):
 
 async def startup_log_all_done():
     try:
-        await bot.send_message(Var.PRIVATE_GROUP_ID,"Lucif3rHun's Personal UserBot has been deployed.\nSend `.alive` to see if the bot is working.")
-    except BaseException:
+        await bot.send_message(Config.PRIVATE_GROUP_ID,"Lucif3rHun's Personal UserBot has been deployed.\nSend `.alive` to see if the bot is working.")
+    except:
         print("Either PRIVATE_GROUP_ID is wrong or you have left the group.")
 
 if len(argv) not in (1, 3, 4):
@@ -34,7 +34,7 @@ else:
             "TG_BOT_TOKEN", api_id=Var.APP_ID, api_hash=Var.API_HASH
         ).start(bot_token=Var.TG_BOT_TOKEN_BF_HER)
         print("Initialised Sucessfully")
-        print("Starting Dark AI")
+        print("Starting LuciferHunUserBot")
         bot.loop.run_until_complete(add_bot(Var.TG_BOT_USER_NAME_BF_HER))
         print("Startup Completed")
     else:
