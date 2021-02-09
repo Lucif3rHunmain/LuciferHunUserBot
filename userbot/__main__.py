@@ -9,6 +9,7 @@ from userbot import bot
 from userbot.utils import load_module, start_assistant
 from userbot.uniborgConfig import Config
 
+LUCIFER = Config.PRIVATE_GROUP_ID
 LOAD_USERBOT = os.environ.get("LOAD_USERBOT", True)
 LOAD_ASSISTANT = os.environ.get("LOAD_ASSISTANT", True)    
 
@@ -19,8 +20,8 @@ async def add_bot(bot_token):
 
 async def startup_log_all_done():
     try:
-        await bot.send_message(Config.PRIVATE_GROUP_ID,"Lucif3rHun's Personal UserBot has been deployed.\nSend `.alive` to see if the bot is working.")
-    except:
+        await bot.send_message(LUCIFER,"Lucif3rHun's Personal UserBot has been deployed.\nSend `.alive` to see if the bot is working.")
+    except BaseException:
         print("Either PRIVATE_GROUP_ID is wrong or you have left the group.")
 
 if len(argv) not in (1, 3, 4):
