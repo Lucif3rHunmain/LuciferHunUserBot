@@ -18,12 +18,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 
 from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
 
-DEFAULT_BIO = Config.DEFAULT_BIO
-if DEFAULT_BIO is None:
- BIO_PREFIX = "LuciferHunUserBot is the Best"
-else:
- BIO_PREFIX = DEFAULT_BIO
-
+BIO_PREFIX = Config.DEFAULT_BIO
 LASTFM_API = Config.LASTFM_API
 LASTFM_SECRET = Config.LASTFM_SECRET
 LASTFM_USERNAME = Config.LASTFM_USERNAME
