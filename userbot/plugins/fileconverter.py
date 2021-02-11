@@ -12,8 +12,9 @@ from telethon import functions, types
 from telethon.errors import PhotoInvalidDimensionsError
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from telethon.tl.functions.messages import SendMediaRequest
+from userbot.helpers import progress
+from userbot.plugins import make_gif
 
-from . import make_gif, progress
 
 if not os.path.isdir("./temp"):
     os.makedirs("./temp")
