@@ -6,7 +6,7 @@ import time
 from datetime import datetime
 from io import BytesIO
 from datetime import datetime
-from userbot.utils import admin_cmd, sudo_cmd
+from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply, edit_delete
 from userbot import CMD_HELP, bot
 from telethon import functions, types
 from telethon.errors import PhotoInvalidDimensionsError
