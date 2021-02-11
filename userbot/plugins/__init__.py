@@ -1,7 +1,7 @@
 from userbot import darkdef
 from ..helper import functions as dcdef
 import lottie
-#USELESS
+#USE
 darkmusic = darkdef.darkmusic 
 darkmusicvideo = darkdef.darkmusicvideo
 
