@@ -149,8 +149,8 @@ async def on_file_to_photo(event):
     await lucifert.delete()
 
 
-@borg.on(admin_cmd(pattern="gif(?: |$)(.*)"))
-@borg.on(sudo_cmd(pattern="gif(?: |$)(.*)", allow_sudo=True))
+@borg.on(admin_cmd(pattern="gify(?: |$)(.*)"))
+@borg.on(sudo_cmd(pattern="gify(?: |$)(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
