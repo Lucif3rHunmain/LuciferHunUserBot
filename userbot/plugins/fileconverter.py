@@ -16,8 +16,8 @@ from userbot.helpers import progress
 from userbot.plugins import make_gif
 
 
-if not os.path.isdir("./temp"):
-    os.makedirs("./temp")
+if not os.path.isdir("./TMP"):
+    os.makedirs("./TMP")
 
 
 @borg.on(admin_cmd(pattern="stoi$"))
@@ -29,13 +29,13 @@ async def _(lucifer):
     if lucifer.reply_to_msg_id:
         reply_to_id = lucifer.reply_to_msg_id
     event = await edit_or_reply(lucifer, "Converting.....")
-    if not os.path.isdir(Config.TEMP_DOWNLOAD_DIRECTORY):
-        os.makedirs(Config.TEMP_DOWNLOAD_DIRECTORY)
+    if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
+        os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     if event.reply_to_msg_id:
         filename = "hi.jpg"
         file_name = filename
         reply_message = await event.get_reply_message()
-        to_download_directory = Config.TEMP_DOWNLOAD_DIRECTORY
+        to_download_directory = Config.TMP_DOWNLOAD_DIRECTORY
         downloaded_file_name = os.path.join(to_download_directory, file_name)
         downloaded_file_name = await lucifer.client.download_media(
             reply_message, downloaded_file_name
@@ -64,13 +64,13 @@ async def _(lucifer):
     if lucifer.reply_to_msg_id:
         reply_to_id = lucifer.reply_to_msg_id
     event = await edit_or_reply(lucifer, "Converting.....")
-    if not os.path.isdir(Config.TEMP_DOWNLOAD_DIRECTORY):
-        os.makedirs(Config.TEMP_DOWNLOAD_DIRECTORY)
+    if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
+        os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     if event.reply_to_msg_id:
         filename = "hi.webp"
         file_name = filename
         reply_message = await event.get_reply_message()
-        to_download_directory = Config.TEMP_DOWNLOAD_DIRECTORY
+        to_download_directory = Config.TMP_DOWNLOAD_DIRECTORY
         downloaded_file_name = os.path.join(to_download_directory, file_name)
         downloaded_file_name = await lucifer.client.download_media(
             reply_message, downloaded_file_name
@@ -247,7 +247,7 @@ async def _(event):
         c_time = time.time()
         downloaded_file_name = await event.client.download_media(
             reply_message,
-            Config.TEMP_DOWNLOAD_DIRECTORY,
+            Config.TMP_DOWNLOAD_DIRECTORY,
             progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
                 progress(d, t, event, c_time, "trying to download")
             ),
@@ -268,7 +268,7 @@ async def _(event):
         if input_str == "voice":
             new_required_file_caption = "voice_" + str(round(time.time())) + ".opus"
             new_required_file_name = (
-                Config.TEMP_DOWNLOAD_DIRECTORY + "/" + new_required_file_caption
+                Config.TMP_DOWNLOAD_DIRECTORY + "/" + new_required_file_caption
             )
             command_to_run = [
                 "ffmpeg",
@@ -289,7 +289,7 @@ async def _(event):
         elif input_str == "mp3":
             new_required_file_caption = "mp3_" + str(round(time.time())) + ".mp3"
             new_required_file_name = (
-                Config.TEMP_DOWNLOAD_DIRECTORY + "/" + new_required_file_caption
+                Config.TMP_DOWNLOAD_DIRECTORY + "/" + new_required_file_caption
             )
             command_to_run = [
                 "ffmpeg",
