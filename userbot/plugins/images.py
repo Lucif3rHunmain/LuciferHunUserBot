@@ -2,7 +2,7 @@ from userbot.google_imgs import googleimagesdownload
 import os
 import shutil
 from re import findall
-from userbot.utils import admin_cmd
+from userbot.utils import admin_cmd, edit_or_reply
 from userbot import CMD_HELP
 
 @borg.on(admin_cmd(pattern=r"img(?: |$)(\d*)? ?(.*)"))
