@@ -38,7 +38,7 @@ async def img_sampler(event):
     except Exception as e:
         return await Lucifer.edit(f"Error: \n`{e}`")
     lst = paths[0][query]
-    await event.client.send_file(event.chat_id, lst, reply_to=reply_to_id)
+    await event.client.send_file(event.chat_id, lst, reply_to=reply_message)
     shutil.rmtree(os.path.dirname(os.path.abspath(lst[0])))
     await Lucifer.delete()
 
@@ -47,6 +47,6 @@ CMD_HELP.update(
     {
         "images": "**Plugin :**`images`\
     \n\n**  •  Syntax :** `.img <limit> <Name>` or `.img <limit> (replied message)`\
-    \n**  •  Function : **do google image search and sends 3 images. default if you havent mentioned limit"
+    \n**  •  Function : **do google image search and sends 5 images. default if you havent mentioned limit"
     }
 )
