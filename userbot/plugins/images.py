@@ -9,7 +9,6 @@ from userbot import CMD_HELP
 async def img_sampler(event):
     if event.fwd_from:
         return
-    reply_to_id = await reply_id(event)
     if event.is_reply and not event.pattern_match.group(2):
         query = await event.get_reply_message()
         query = str(query.message)
