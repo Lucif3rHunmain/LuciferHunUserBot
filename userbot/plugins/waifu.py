@@ -61,7 +61,7 @@ async def waifu(animu):
     )
     await animu.delete()
 
- CMD_HELP.update(
+CMD_HELP.update(
     {
         "Anime Text": "__**PLUGIN NAME :** Anime Text__\
     \n\n📌** CMD ★** `.waifu`\
